@@ -6,8 +6,8 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Product Manager Portfolio",
-  description: "Portfolio showcasing my product management experience, case studies, and achievements",
+  title: "Breanna Burns | Product Manager",
+  description: "Portfolio showcasing Breanna Burns' product management experience, case studies, and achievements",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
               <div className="flex justify-between h-16">
                 <div className="flex">
                   <Link href="/" className="flex items-center">
-                    <span className="text-xl font-bold text-gray-800">PM Portfolio</span>
+                    <span className="text-xl font-bold text-gray-800">Breanna Burns</span>
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -61,20 +61,17 @@ export default function RootLayout({
                 <div>
                   <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contact</h3>
                   <div className="mt-4 space-y-2">
-                    <a href="mailto:your.email@example.com" className="text-base text-gray-500 hover:text-gray-900">
-                      Email
+                    <a href="mailto:burns.655@icloud.com" className="text-base text-gray-500 hover:text-gray-900">
+                      burns.655@icloud.com
                     </a>
-                    <p className="text-base text-gray-500">San Francisco Bay Area</p>
+                    <p className="text-base text-gray-500">Columbus, OH</p>
                   </div>
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Connect</h3>
                   <div className="mt-4 space-y-2">
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-base text-gray-500 hover:text-gray-900">
+                    <a href="https://www.linkedin.com/in/breanna-burns/" target="_blank" rel="noopener noreferrer" className="text-base text-gray-500 hover:text-gray-900">
                       LinkedIn
-                    </a>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="block text-base text-gray-500 hover:text-gray-900">
-                      GitHub
                     </a>
                   </div>
                 </div>
@@ -92,7 +89,7 @@ export default function RootLayout({
               </div>
               <div className="mt-8 border-t border-gray-200 pt-8">
                 <p className="text-base text-gray-400 text-center">
-                  © {new Date().getFullYear()} Your Name. All rights reserved.
+                  © {new Date().getFullYear()} Breanna Burns. All rights reserved.
                 </p>
               </div>
             </div>
