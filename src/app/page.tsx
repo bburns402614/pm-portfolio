@@ -1,20 +1,38 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const skills = [
-  { name: 'Onboarding & Activation Funnels', description: 'End-to-end funnel design, drop-off analysis, and iterative improvement' },
-  { name: 'Funnel Analysis & Opportunity Sizing', description: 'Quantifying drop-offs to prioritize highest-impact fixes' },
-  { name: 'Journey Mapping', description: 'Translating user journeys into clear product narratives and phased plans' },
-  { name: 'AI-Enabled Automation', description: 'Document parsing, data validation, and exception handling workflows' },
-  { name: 'Cross-functional Leadership', description: 'Partnering with Engineering, Design, Ops, and Compliance' },
-  { name: 'Vendor & API Integrations', description: 'Third-party platform integrations to automate intake and onboarding' },
-]
+  {
+    name: "Onboarding & Activation Funnels",
+    description: "End-to-end funnel design, drop-off analysis, and iterative improvement",
+  },
+  {
+    name: "Funnel Analysis & Opportunity Sizing",
+    description: "Quantifying drop-offs to prioritize highest-impact fixes",
+  },
+  {
+    name: "Journey Mapping",
+    description: "Translating user journeys into clear product narratives and phased plans",
+  },
+  {
+    name: "AI-Enabled Automation",
+    description: "Document parsing, data validation, and exception handling workflows",
+  },
+  {
+    name: "Cross-functional Leadership",
+    description: "Partnering with Engineering, Design, Ops, and Compliance",
+  },
+  {
+    name: "Vendor & API Integrations",
+    description: "Third-party platform integrations to automate intake and onboarding",
+  },
+];
 
 const highlights = [
-  { stat: '10+', label: 'Years of PM Experience' },
-  { stat: '40%', label: 'Reduction in Manual Intervention' },
-  { stat: '70%', label: 'Faster Credentialing Turnaround' },
-  { stat: '28%', label: 'Delivery Efficiency Improvement' },
-]
+  { stat: "10+", label: "Years of PM Experience" },
+  { stat: "40%", label: "Reduction in Manual Intervention" },
+  { stat: "70%", label: "Faster Credentialing Turnaround" },
+  { stat: "28%", label: "Delivery Efficiency Improvement" },
+];
 
 export default function Home() {
   return (
@@ -32,10 +50,10 @@ export default function Home() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
-                href="/case-studies"
+                href="/projects"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                View Case Studies
+                View Projects
               </Link>
               <Link href="/about" className="text-sm font-semibold leading-6 text-gray-900">
                 About Me <span aria-hidden="true">→</span>
@@ -80,10 +98,10 @@ export default function Home() {
           <p className="mt-4 text-gray-600">Dive into detailed case studies from IOU Financial, Quantum Health, and Radiology Partners.</p>
           <div className="mt-8 flex justify-center gap-x-6">
             <Link
-              href="/case-studies"
+              href="/projects"
               className="rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500"
             >
-              Case Studies
+              Projects
             </Link>
             <Link
               href="/about"
