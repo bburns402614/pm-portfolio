@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf9f6;
+  --foreground: #17181c;
+
+  /* Design tokens */
+  --ink: #17181c;
+  --ink-soft: #55565f;
+  --ink-faint: #8a8b93;
+
+  --paper: #ffffff;
+  --line: #e6e4dd;
+
+  --accent: #1f4e3d;
+  --accent-soft: #e9f0ea;
+  --accent-strong: #14342a;
+
+  --brass: #b8863f;
+  --brass-soft: #f6ecd9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+
+  --color-paper: var(--paper);
+  --color-line: var(--line);
+
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-strong: var(--accent-strong);
+
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-display);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Subtle grain texture used behind hero/dark sections */
+.bg-grain {
+  background-image: radial-gradient(circle at 1px 1px, rgba(23, 24, 28, 0.06) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.bg-grain-dark {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 20px 20px;
 }

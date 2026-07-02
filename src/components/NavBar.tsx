@@ -16,29 +16,43 @@ export default function NavBar() {
 
   return (
     <>
-      <div className="flex justify-between h-16">
+      <div className="flex justify-between items-center h-16 py-3">
         {/* Logo */}
-        <div className="flex">
-          <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-gray-800">Breanna Burns</span>
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-white font-serif italic text-sm">
+            BB
+          </span>
+          <span className="text-base font-semibold text-ink tracking-tight hidden sm:inline">
+            Breanna Burns
+          </span>
+        </Link>
 
         {/* Desktop navigation links */}
-        <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+        <div className="hidden sm:flex sm:items-center sm:gap-8">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${
+              className={`relative py-2 text-sm font-medium transition-colors ${
                 pathname === href
-                  ? "text-gray-900"
-                  : "text-gray-500 hover:text-gray-900"
+                  ? "text-ink"
+                  : "text-ink-soft hover:text-ink"
               }`}
             >
               {label}
+              <span
+                className={`absolute -bottom-0.5 left-0 h-px w-full bg-accent transition-transform duration-200 origin-left ${
+                  pathname === href ? "scale-x-100" : "scale-x-0"
+                }`}
+              />
             </Link>
           ))}
+          <a
+            href="mailto:burns.655@icloud.com"
+            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-white hover:bg-accent-strong transition-colors"
+          >
+            Get in touch
+          </a>
         </div>
 
         {/* Hamburger button — visible only on mobile */}
@@ -48,7 +62,7 @@ export default function NavBar() {
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-            className="inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            className="inline-flex items-center justify-center rounded-md p-2 text-ink-soft hover:text-ink hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent"
           >
             {isOpen ? (
               /* X icon */
@@ -88,25 +102,32 @@ export default function NavBar() {
 
       {/* Mobile navigation panel — slides open/closed via max-height transition */}
       <div
-        className={`sm:hidden border-t border-gray-200 overflow-hidden transition-all duration-200 ease-in-out motion-reduce:transition-none ${
-          isOpen ? "max-h-40" : "max-h-0"
+        className={`sm:hidden border-t border-line overflow-hidden transition-all duration-200 ease-in-out motion-reduce:transition-none ${
+          isOpen ? "max-h-56" : "max-h-0"
         }`}
       >
-        <div className="pt-2 pb-3">
+        <div className="pt-2 pb-4">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setIsOpen(false)}
-              className={`block px-4 py-3 text-base font-medium ${
+              className={`block px-1 py-3 text-base font-medium ${
                 pathname === href
-                  ? "text-gray-900 bg-gray-50"
-                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                  ? "text-ink"
+                  : "text-ink-soft hover:text-ink"
               }`}
             >
               {label}
             </Link>
           ))}
+          <a
+            href="mailto:burns.655@icloud.com"
+            onClick={() => setIsOpen(false)}
+            className="mt-2 inline-block rounded-full bg-ink px-4 py-2 text-sm font-medium text-white"
+          >
+            Get in touch
+          </a>
         </div>
       </div>
     </>
