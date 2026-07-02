@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import NavBar from "@/components/NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const display = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
-  title: "Product Manager Portfolio",
-  description: "Portfolio showcasing my product management experience, case studies, and achievements",
+  title: "Breanna Burns | Product Manager",
+  description: "Portfolio showcasing Breanna Burns' product management experience, case studies, and achievements",
 };
 
 export default function RootLayout({
@@ -16,36 +26,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${inter.variable} ${display.variable}`}>
+      <body className="font-sans">
         <div className="min-h-screen flex flex-col">
           {/* Navigation */}
-          <nav className="bg-white shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between h-16">
-                <div className="flex">
-                  <Link href="/" className="flex items-center">
-                    <span className="text-xl font-bold text-gray-800">PM Portfolio</span>
-                  </Link>
-                </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  <Link href="/" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900">
-                    Home
-                  </Link>
-                  <Link href="/about" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-                    About
-                  </Link>
-                  <Link href="/projects" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-                    Projects
-                  </Link>
-                  <Link href="/case-studies" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-                    Case Studies
-                  </Link>
-                  <Link href="/blog" className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-900">
-                    Blog
-                  </Link>
-                </div>
-              </div>
+          <nav className="sticky top-0 z-50 border-b border-line bg-paper/80 backdrop-blur-md">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <NavBar />
             </div>
           </nav>
 
@@ -55,45 +42,39 @@ export default function RootLayout({
           </main>
 
           {/* Footer */}
-          <footer className="bg-white border-t">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <footer className="bg-ink text-white">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+              <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr] gap-10">
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contact</h3>
+                  <span className="font-serif italic text-2xl">Breanna Burns</span>
+                  <p className="mt-3 text-sm text-white/50 max-w-xs leading-6">
+                    Product Manager building reliable, well-measured onboarding experiences in fintech.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xs font-semibold tracking-widest uppercase text-white/40">Contact</h3>
                   <div className="mt-4 space-y-2">
-                    <a href="mailto:your.email@example.com" className="text-base text-gray-500 hover:text-gray-900">
-                      Email
+                    <a href="mailto:burns.655@icloud.com" className="block text-sm text-white/70 hover:text-white transition-colors">
+                      burns.655@icloud.com
                     </a>
-                    <p className="text-base text-gray-500">San Francisco Bay Area</p>
+                    <p className="text-sm text-white/70">614-736-1701</p>
+                    <p className="text-sm text-white/70">Columbus, OH</p>
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Connect</h3>
+                  <h3 className="text-xs font-semibold tracking-widest uppercase text-white/40">Connect</h3>
                   <div className="mt-4 space-y-2">
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-base text-gray-500 hover:text-gray-900">
-                      LinkedIn
+                    <a href="https://www.linkedin.com/in/breanna-burns/" target="_blank" rel="noopener noreferrer" className="block text-sm text-white/70 hover:text-white transition-colors">
+                      LinkedIn ↗
                     </a>
-                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="block text-base text-gray-500 hover:text-gray-900">
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Resources</h3>
-                  <div className="mt-4 space-y-2">
-                    <Link href="/blog" className="text-base text-gray-500 hover:text-gray-900">
-                      Blog Posts
-                    </Link>
-                    <Link href="/case-studies" className="block text-base text-gray-500 hover:text-gray-900">
-                      Case Studies
-                    </Link>
                   </div>
                 </div>
               </div>
-              <div className="mt-8 border-t border-gray-200 pt-8">
-                <p className="text-base text-gray-400 text-center">
-                  © {new Date().getFullYear()} Your Name. All rights reserved.
+              <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between gap-2">
+                <p className="text-sm text-white/40">
+                  © {new Date().getFullYear()} Breanna Burns. All rights reserved.
                 </p>
+                <p className="text-sm text-white/40">Product Manager · Fintech &amp; Regulated Consumer Products</p>
               </div>
             </div>
           </footer>
