@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader } from "next/font/google";
+import { Archivo, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 
-const inter = Inter({
+const body = Archivo({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-body",
 });
 
-const display = Newsreader({
+const heading = Space_Grotesk({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600"],
-  variable: "--font-display",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -26,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${display.variable}`}>
-      <body className="font-sans">
+    <html lang="en" className={`${body.variable} ${heading.variable}`}>
+      <body className="font-sans antialiased">
         <div className="min-h-screen flex flex-col">
           {/* Navigation */}
           <nav className="sticky top-0 z-50 border-b border-line bg-paper/80 backdrop-blur-md">
@@ -46,7 +46,7 @@ export default function RootLayout({
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
               <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr] gap-10">
                 <div>
-                  <span className="font-serif italic text-2xl">Breanna Burns</span>
+                  <span className="font-heading font-bold text-2xl tracking-tight">Breanna Burns</span>
                   <p className="mt-3 text-sm text-white/50 max-w-xs leading-6">
                     Product Manager building reliable, well-measured onboarding experiences in fintech.
                   </p>

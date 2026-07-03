@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf9f6;
-  --foreground: #17181c;
+  --background: #FAFAFA;
+  --foreground: #09090B;
 
-  /* Design tokens */
-  --ink: #17181c;
-  --ink-soft: #55565f;
-  --ink-faint: #8a8b93;
+  /* Design tokens — monochrome + blue accent (UI UX Pro Max: Portfolio/Personal) */
+  --ink: #18181B;
+  --ink-soft: #64748B;
+  --ink-faint: #A1A1AA;
 
-  --paper: #ffffff;
-  --line: #e6e4dd;
+  --paper: #FFFFFF;
+  --line: #E4E4E7;
 
-  --accent: #1f4e3d;
-  --accent-soft: #e9f0ea;
-  --accent-strong: #14342a;
+  --accent: #2563EB;
+  --accent-soft: #EFF6FF;
+  --accent-strong: #1D4ED8;
 
-  --brass: #b8863f;
-  --brass-soft: #f6ecd9;
+  --muted: #E8ECF0;
+  --muted-fg: #64748B;
 }
 
 @theme inline {
@@ -35,11 +35,11 @@
   --color-accent-soft: var(--accent-soft);
   --color-accent-strong: var(--accent-strong);
 
-  --color-brass: var(--brass);
-  --color-brass-soft: var(--brass-soft);
+  --color-muted: var(--muted);
+  --color-muted-fg: var(--muted-fg);
 
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
 }
 
 body {
@@ -50,11 +50,18 @@ body {
 
 /* Subtle grain texture used behind hero/dark sections */
 .bg-grain {
-  background-image: radial-gradient(circle at 1px 1px, rgba(23, 24, 28, 0.06) 1px, transparent 0);
-  background-size: 20px 20px;
+  background-image: radial-gradient(circle at 1px 1px, rgba(24, 24, 27, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
 }
 
 .bg-grain-dark {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
-  background-size: 20px 20px;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

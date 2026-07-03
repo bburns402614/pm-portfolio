@@ -40,47 +40,46 @@ export default function Home() {
       {/* Hero */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grain" />
-        <div className="absolute -top-32 right-0 h-96 w-96 rounded-full bg-accent-soft blur-3xl opacity-70" />
-        <div className="relative mx-auto max-w-4xl px-6 pt-24 pb-20 sm:pt-32 sm:pb-28 lg:px-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-medium tracking-wide text-ink-soft">
+        <div className="relative mx-auto max-w-5xl px-6 pt-28 pb-24 sm:pt-36 sm:pb-32 lg:px-8">
+          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-ink-soft">
             Fintech &amp; Regulated Consumer Products · Columbus, OH
           </span>
-          <h1 className="mt-8 font-serif text-5xl leading-[1.1] tracking-tight text-ink sm:text-6xl">
+          <h1 className="mt-10 font-heading font-bold text-[clamp(2.75rem,8vw,6rem)] leading-[0.95] tracking-tight text-ink">
             Product management,{" "}
-            <span className="italic text-accent">grounded in the funnel.</span>
+            <span className="text-accent">grounded in the funnel.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-soft">
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft">
             10+ years turning onboarding data into shipped improvements. I lead platform builds
             end-to-end — from journey maps and PRDs through funnel analysis, FullStory replay, and
             reliable lifecycle workflows — for teams that can&apos;t afford to get compliance or
             trust wrong.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
               href="/projects"
-              className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent-strong transition-colors"
+              className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent transition-colors duration-200"
             >
               View Case Studies
             </Link>
             <Link
               href="/about"
-              className="group flex items-center gap-1.5 text-sm font-semibold text-ink"
+              className="cursor-pointer group flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-accent transition-colors duration-200"
             >
               About Me
-              <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+              <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
             </Link>
           </div>
         </div>
       </div>
 
       {/* Impact stats */}
-      <div className="bg-ink bg-grain-dark py-16">
+      <div className="bg-ink bg-grain-dark py-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <dl className="grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">
+          <dl className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
             {highlights.map((h) => (
-              <div key={h.label} className="border-l border-white/15 pl-5">
-                <dt className="font-serif text-4xl text-white">{h.stat}</dt>
-                <dd className="mt-2 text-sm text-white/50">{h.label}</dd>
+              <div key={h.label} className="border-l-2 border-accent pl-6">
+                <dt className="font-heading font-bold text-5xl text-white tracking-tight">{h.stat}</dt>
+                <dd className="mt-2 text-sm text-white/50 leading-6">{h.label}</dd>
               </div>
             ))}
           </dl>
@@ -88,19 +87,19 @@ export default function Home() {
       </div>
 
       {/* Skills */}
-      <div className="mx-auto max-w-6xl px-6 lg:px-8 py-24">
-        <div className="max-w-2xl">
-          <h2 className="font-serif text-3xl tracking-tight text-ink mb-4">Core competencies</h2>
-          <p className="text-ink-soft mb-12 leading-7">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 py-28">
+        <div className="max-w-2xl mb-16">
+          <h2 className="font-heading font-bold text-4xl tracking-tight text-ink mb-5">Core competencies</h2>
+          <p className="text-ink-soft leading-7">
             Specialized in fintech onboarding, funnel optimization, and AI-enabled automation —
             backed by direct partnership with engineering, design, ops, and compliance.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-px bg-line sm:grid-cols-2 lg:grid-cols-3 border border-line">
           {skills.map((skill) => (
-            <div key={skill.name} className="bg-paper p-7 hover:bg-accent-soft/40 transition-colors">
-              <div className="mb-3 h-1 w-8 bg-brass" />
-              <h3 className="font-semibold text-ink">{skill.name}</h3>
+            <div key={skill.name} className="bg-paper p-8 hover:bg-accent-soft transition-colors duration-200">
+              <div className="mb-4 h-0.5 w-10 bg-accent" />
+              <h3 className="font-heading font-semibold text-ink">{skill.name}</h3>
               <p className="mt-2 text-sm text-ink-soft leading-6">{skill.description}</p>
             </div>
           ))}
@@ -108,22 +107,22 @@ export default function Home() {
       </div>
 
       {/* CTA */}
-      <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-24">
-        <div className="rounded-2xl border border-line bg-paper px-8 py-14 text-center sm:px-16">
-          <h2 className="font-serif text-3xl text-ink">Want to see the work?</h2>
-          <p className="mt-4 text-ink-soft">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-28">
+        <div className="rounded-2xl border border-line bg-paper px-8 py-16 text-center sm:px-16">
+          <h2 className="font-heading font-bold text-4xl tracking-tight text-ink">Want to see the work?</h2>
+          <p className="mt-5 text-ink-soft max-w-md mx-auto leading-7">
             Dive into detailed case studies from IOU Financial, Radiology Partners, and Buckeye Health Plan.
           </p>
-          <div className="mt-8 flex justify-center gap-x-4">
+          <div className="mt-10 flex justify-center gap-x-4">
             <Link
               href="/projects"
-              className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-strong transition-colors"
+              className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-accent transition-colors duration-200"
             >
               Projects
             </Link>
             <Link
               href="/about"
-              className="rounded-full border border-line px-5 py-2.5 text-sm font-semibold text-ink hover:bg-background transition-colors"
+              className="cursor-pointer rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink hover:border-accent hover:text-accent transition-colors duration-200"
             >
               My Background
             </Link>

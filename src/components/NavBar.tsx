@@ -19,10 +19,10 @@ export default function NavBar() {
       <div className="flex justify-between items-center h-16 py-3">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-white font-serif italic text-sm">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-white font-heading font-bold text-sm tracking-tight">
             BB
           </span>
-          <span className="text-base font-semibold text-ink tracking-tight hidden sm:inline">
+          <span className="text-base font-heading font-bold text-ink tracking-tight hidden sm:inline">
             Breanna Burns
           </span>
         </Link>
@@ -49,7 +49,7 @@ export default function NavBar() {
           ))}
           <a
             href="mailto:burns.655@icloud.com"
-            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-white hover:bg-accent-strong transition-colors"
+            className="cursor-pointer rounded-full bg-ink px-4 py-2 text-sm font-medium text-white hover:bg-accent transition-colors duration-200"
           >
             Get in touch
           </a>
