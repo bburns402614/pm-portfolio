@@ -14,8 +14,8 @@ const skills = [
     description: "Translating user journeys into clear product narratives and phased plans",
   },
   {
-    name: "AI-Enabled Automation",
-    description: "Document parsing, data validation, and exception handling workflows",
+    name: "AI Agent Development",
+    description: "Building agents for feedback synthesis, PRD generation, sprint planning, and outbound sales — using the Anthropic SDK",
   },
   {
     name: "Cross-functional Leadership",

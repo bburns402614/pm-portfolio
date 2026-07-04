@@ -58,13 +58,14 @@ const skills = [
   'PRDs / User Stories / AC',
   'Experimentation Support',
   'Vendor & API Integrations',
+  'AI Agent Development',
+  'Claude / Anthropic SDK',
   'Plaid',
   'Lendflow',
   'Salesforce',
   'Experian',
   'FullStory',
   'Atlassian Products',
-  'AI-Assisted Prototyping',
 ]
 
 export default function About() {
@@ -74,10 +75,10 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
           {/* Sidebar */}
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-white font-serif italic text-xl">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-white font-heading font-bold text-sm tracking-tight">
               BB
             </div>
-            <h1 className="mt-6 font-serif text-3xl text-ink">Breanna Burns</h1>
+            <h1 className="mt-6 font-heading font-bold text-3xl tracking-tight text-ink">Breanna Burns</h1>
             <p className="mt-1 text-sm font-medium text-accent">Product Manager</p>
             <p className="text-sm text-ink-soft">Columbus, OH</p>
 
@@ -113,13 +114,19 @@ export default function About() {
             </p>
             <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
               Strong cross-functional partner to Engineering, Design, Ops, and Compliance;
-              experienced with AI-enabled automation, third-party integrations (Plaid, Lendflow,
-              Salesforce, Experian), and building reliable lifecycle workflows.
+              experienced with third-party integrations (Plaid, Lendflow, Salesforce, Experian)
+              and building reliable lifecycle workflows.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
+              I prototype and build with AI — not just prompt it. I&apos;ve built agents for
+              customer feedback synthesis, PRD generation, and sprint prioritization using the
+              Anthropic SDK, and I completed Google&apos;s 5-Day AI Agent Intensive. Currently
+              building an SDR agent for automated outbound prospecting.
             </p>
 
             {/* Experience timeline */}
             <div className="mt-16">
-              <h2 className="font-serif text-2xl text-ink mb-10">Experience</h2>
+              <h2 className="font-heading font-bold text-2xl tracking-tight text-ink mb-10">Experience</h2>
               <div className="relative space-y-12 border-l border-line pl-8">
                 {experience.map((job) => (
                   <div key={job.role + job.company} className="relative">
@@ -147,12 +154,12 @@ export default function About() {
             {/* Education & Certs */}
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-12 border-t border-line pt-12">
               <div>
-                <h2 className="font-serif text-2xl text-ink mb-4">Education</h2>
+                <h2 className="font-heading font-bold text-2xl tracking-tight text-ink mb-4">Education</h2>
                 <p className="font-medium text-ink">The Ohio State University</p>
                 <p className="text-sm text-ink-soft">Columbus, OH</p>
               </div>
               <div>
-                <h2 className="font-serif text-2xl text-ink mb-4">Certifications</h2>
+                <h2 className="font-heading font-bold text-2xl tracking-tight text-ink mb-4">Certifications</h2>
                 <ul className="space-y-3">
                   {certs.map((c) => (
                     <li key={c.name} className="text-sm">

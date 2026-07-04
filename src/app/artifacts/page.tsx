@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "Frameworks, templates, and tools Breanna Burns builds and reaches for across fintech product work.",
 };
 
-type Category = "Discovery" | "Analysis" | "Planning" | "Compliance" | "Communication";
+type Category = "Discovery" | "Analysis" | "Planning" | "Compliance" | "Communication" | "AI Agents";
 
 interface Artifact {
   category: Category;
@@ -128,6 +128,43 @@ const artifacts: Artifact[] = [
     usedIn: ["Direct Merchant Application", "Credentialing Process"],
   },
 
+  // AI Agents
+  {
+    category: "AI Agents",
+    title: "Customer Feedback Synthesis Agent",
+    description:
+      "Aggregates feedback from support tickets, user interviews, and NPS data, then synthesizes patterns, sentiment, and feature requests into a structured PM brief — cutting hours of manual analysis into minutes.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+  {
+    category: "AI Agents",
+    title: "PRD and Documentation Generator",
+    description:
+      "Takes a feature brief or problem statement and produces a structured PRD draft — problem framing, user stories, acceptance criteria, and open questions — as a first-pass for PM refinement rather than blank-page authoring.",
+    usedIn: ["Direct Merchant Application", "AE Workstation", "Broker Portal"],
+  },
+  {
+    category: "AI Agents",
+    title: "Sprint Planning and Prioritization Agent",
+    description:
+      "Scores the backlog by impact, effort, and strategic alignment, then outputs a recommended sprint plan with rationale for each inclusion and deferral — making tradeoffs explicit before planning meetings.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+  {
+    category: "AI Agents",
+    title: "Development Agent Pipeline",
+    description:
+      "Multi-agent system covering intake, architecture planning, UI/UX review, implementation, and code review — each agent specialized for its lane. Built to compress the ideation-to-shipped cycle on real product work.",
+    usedIn: ["PM Portfolio (this site)"],
+  },
+  {
+    category: "AI Agents",
+    title: "SDR Agent",
+    description:
+      "Autonomous outbound agent for lead research, personalized outreach drafting, and follow-up sequencing — built to reduce manual prospecting time and keep reps focused on qualified conversations.",
+    usedIn: ["In Progress"],
+  },
+
   // Communication
   {
     category: "Communication",
@@ -153,14 +190,15 @@ const artifacts: Artifact[] = [
 ];
 
 const categoryMeta: Record<Category, { color: string; bg: string; border: string }> = {
-  Discovery:     { color: "text-violet-700",  bg: "bg-violet-50",  border: "border-violet-200" },
-  Analysis:      { color: "text-blue-700",    bg: "bg-blue-50",    border: "border-blue-200"   },
-  Planning:      { color: "text-emerald-700", bg: "bg-emerald-50", border: "border-emerald-200"},
-  Compliance:    { color: "text-amber-700",   bg: "bg-amber-50",   border: "border-amber-200"  },
-  Communication: { color: "text-rose-700",    bg: "bg-rose-50",    border: "border-rose-200"   },
+  "AI Agents":   { color: "text-indigo-700", bg: "bg-indigo-50",  border: "border-indigo-200" },
+  Discovery:     { color: "text-violet-700", bg: "bg-violet-50",  border: "border-violet-200" },
+  Analysis:      { color: "text-blue-700",   bg: "bg-blue-50",    border: "border-blue-200"   },
+  Planning:      { color: "text-emerald-700",bg: "bg-emerald-50", border: "border-emerald-200"},
+  Compliance:    { color: "text-amber-700",  bg: "bg-amber-50",   border: "border-amber-200"  },
+  Communication: { color: "text-rose-700",   bg: "bg-rose-50",    border: "border-rose-200"   },
 };
 
-const categories: Category[] = ["Discovery", "Analysis", "Planning", "Compliance", "Communication"];
+const categories: Category[] = ["AI Agents", "Discovery", "Analysis", "Planning", "Compliance", "Communication"];
 
 export default function ArtifactsPage() {
   return (
@@ -235,9 +273,13 @@ export default function ArtifactsPage() {
                     {artifact.usedIn.map((project) => (
                       <span
                         key={project}
-                        className="rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-ink-soft"
+                        className={`rounded-md px-2 py-0.5 text-[11px] font-medium ${
+                          project === "In Progress"
+                            ? "bg-amber-50 text-amber-700 border border-amber-200"
+                            : "bg-muted text-ink-soft"
+                        }`}
                       >
-                        {project}
+                        {project === "In Progress" ? "⚙ In Progress" : project}
                       </span>
                     ))}
                   </div>
