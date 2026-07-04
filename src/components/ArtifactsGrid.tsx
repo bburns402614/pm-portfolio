@@ -1,0 +1,293 @@
+"use client";
+
+import { useState } from "react";
+
+type Category = "AI Agents" | "Discovery" | "Analysis" | "Planning" | "Compliance" | "Communication";
+
+interface Artifact {
+  category: Category;
+  title: string;
+  description: string;
+  usedIn: string[];
+}
+
+const artifacts: Artifact[] = [
+  // AI Agents
+  {
+    category: "AI Agents",
+    title: "Customer Feedback Synthesis Agent",
+    description:
+      "Aggregates feedback from support tickets, user interviews, and NPS data, then synthesizes patterns, sentiment, and feature requests into a structured PM brief — cutting hours of manual analysis into minutes.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+  {
+    category: "AI Agents",
+    title: "PRD and Documentation Generator",
+    description:
+      "Takes a feature brief or problem statement and produces a structured PRD draft — problem framing, user stories, acceptance criteria, and open questions — as a first-pass for PM refinement rather than blank-page authoring.",
+    usedIn: ["Direct Merchant Application", "AE Workstation", "Broker Portal"],
+  },
+  {
+    category: "AI Agents",
+    title: "Sprint Planning and Prioritization Agent",
+    description:
+      "Scores the backlog by impact, effort, and strategic alignment, then outputs a recommended sprint plan with rationale for each inclusion and deferral — making tradeoffs explicit before planning meetings.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+  {
+    category: "AI Agents",
+    title: "Development Agent Pipeline",
+    description:
+      "Multi-agent system covering intake, architecture planning, UI/UX review, implementation, and code review — each agent specialized for its lane. Built to compress the ideation-to-shipped cycle on real product work.",
+    usedIn: ["PM Portfolio (this site)"],
+  },
+  {
+    category: "AI Agents",
+    title: "SDR Agent",
+    description:
+      "Autonomous outbound agent for lead research, personalized outreach drafting, and follow-up sequencing — built to reduce manual prospecting time and keep reps focused on qualified conversations.",
+    usedIn: ["In Progress"],
+  },
+
+  // Discovery
+  {
+    category: "Discovery",
+    title: "Onboarding Drop-off Interview Guide",
+    description:
+      "Structured merchant interview framework to pinpoint where and why applicants abandon mid-flow — separating UX friction from trust or eligibility blockers.",
+    usedIn: ["Direct Merchant Application"],
+  },
+  {
+    category: "Discovery",
+    title: "Journey Map Canvas",
+    description:
+      "End-to-end experience map from first touchpoint through funded state, with lanes for actions, emotions, questions, and system dependencies at each step.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+  {
+    category: "Discovery",
+    title: "Stakeholder Kickoff Brief",
+    description:
+      "Pre-sprint alignment doc covering problem statement, scope boundaries, decision owners, and open questions — keeps Engineering, Compliance, and Ops on the same page before work starts.",
+    usedIn: ["AIDoc Rollout", "Credentialing Process", "AE Workstation"],
+  },
+  {
+    category: "Discovery",
+    title: "Competitor Onboarding Audit",
+    description:
+      "Side-by-side teardown of competitor application flows: step count, required fields, verification methods, and friction points — used to inform sequencing decisions.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+
+  // Analysis
+  {
+    category: "Analysis",
+    title: "Funnel Drop-off Scorecard",
+    description:
+      "Ranks each funnel step by drop-off volume × completion impact. Cuts through opinion by making the highest-leverage fixes obvious before sprint planning.",
+    usedIn: ["Direct Merchant Application"],
+  },
+  {
+    category: "Analysis",
+    title: "FullStory Session Review Checklist",
+    description:
+      "Structured protocol for replaying sessions: what to look for, how to tag friction patterns, and how to convert replay findings into actionable tickets.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+  {
+    category: "Analysis",
+    title: "KPI Definition Framework",
+    description:
+      "Maps each feature to leading indicators (submission rate, step completion) and lagging indicators (approval rate, time-to-fund) — defined before launch, not after.",
+    usedIn: ["Direct Merchant Application", "Broker Portal", "AE Workstation"],
+  },
+  {
+    category: "Analysis",
+    title: "Exception & Error Rate Tracker",
+    description:
+      "Log format and triage process for surfacing validation failures, integration timeouts, and parsing errors — separates noise from patterns worth engineering time.",
+    usedIn: ["AE Workstation", "Direct Merchant Application"],
+  },
+
+  // Planning
+  {
+    category: "Planning",
+    title: "Integration Spec Template",
+    description:
+      "API contract doc covering endpoint behavior, required fields, edge cases, failure modes, and rollback plan — written before engineering starts, not during.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+  {
+    category: "Planning",
+    title: "PRD Structure",
+    description:
+      "One-page format: problem, affected personas, proposed solution, out-of-scope, open questions, and measurable success criteria. Opinionated enough to force decisions early.",
+    usedIn: ["Direct Merchant Application", "Broker Portal", "AE Workstation"],
+  },
+  {
+    category: "Planning",
+    title: "Acceptance Criteria Checklist",
+    description:
+      "Step-by-step gate for engineering handoff: each requirement mapped to a testable behavior, edge case coverage, and a Compliance sign-off field where applicable.",
+    usedIn: ["Direct Merchant Application", "Broker Portal", "AIDoc Rollout"],
+  },
+  {
+    category: "Planning",
+    title: "Phased Launch Plan",
+    description:
+      "Staged rollout template with go/no-go criteria, rollback triggers, internal comms cadence, and hypercare checklist for the first 30 days post-launch.",
+    usedIn: ["Direct Merchant Application", "AIDoc Rollout"],
+  },
+
+  // Compliance
+  {
+    category: "Compliance",
+    title: "State Disclosure Review Checklist",
+    description:
+      "CA and NY regulatory requirements mapped to specific feature behaviors — covers disclosure timing, consent language, and documentation audit trail.",
+    usedIn: ["Broker Portal"],
+  },
+  {
+    category: "Compliance",
+    title: "Launch Readiness Gate",
+    description:
+      "Cross-functional sign-off matrix: Engineering, Legal, Compliance, Ops, and Support each confirm their lane is clear before a feature goes live.",
+    usedIn: ["Direct Merchant Application", "Broker Portal", "AIDoc Rollout"],
+  },
+  {
+    category: "Compliance",
+    title: "PII & Data Handling Map",
+    description:
+      "Documents every PII field collected, its purpose, consent mechanism, retention period, and access controls — built for regulated environments where audit trails matter.",
+    usedIn: ["Direct Merchant Application", "Credentialing Process"],
+  },
+
+  // Communication
+  {
+    category: "Communication",
+    title: "AE Handoff Brief",
+    description:
+      "Structured context doc for Account Executives picking up a new application or workflow — covers what the product does, what the AE owns, and where to escalate edge cases.",
+    usedIn: ["AE Workstation"],
+  },
+  {
+    category: "Communication",
+    title: "Stakeholder Status Update",
+    description:
+      "Biweekly format for non-technical stakeholders: what shipped, what's in flight, blockers, and one metric moving in the right direction.",
+    usedIn: ["Direct Merchant Application", "AIDoc Rollout", "Credentialing Process"],
+  },
+  {
+    category: "Communication",
+    title: "Vendor Escalation Framework",
+    description:
+      "Decision tree for integration issues: when to self-resolve, when to escalate to vendor support, and when to trigger engineering or leadership involvement.",
+    usedIn: ["Direct Merchant Application", "Broker Portal"],
+  },
+];
+
+const categoryMeta: Record<Category, { color: string; bg: string; border: string; activeBg: string; activeBorder: string }> = {
+  "AI Agents":   { color: "text-indigo-700", bg: "bg-indigo-50",  border: "border-indigo-200", activeBg: "bg-indigo-600",  activeBorder: "border-indigo-600"  },
+  Discovery:     { color: "text-violet-700", bg: "bg-violet-50",  border: "border-violet-200", activeBg: "bg-violet-600",  activeBorder: "border-violet-600"  },
+  Analysis:      { color: "text-blue-700",   bg: "bg-blue-50",    border: "border-blue-200",   activeBg: "bg-blue-600",    activeBorder: "border-blue-600"    },
+  Planning:      { color: "text-emerald-700",bg: "bg-emerald-50", border: "border-emerald-200",activeBg: "bg-emerald-600", activeBorder: "border-emerald-600" },
+  Compliance:    { color: "text-amber-700",  bg: "bg-amber-50",   border: "border-amber-200",  activeBg: "bg-amber-600",   activeBorder: "border-amber-600"   },
+  Communication: { color: "text-rose-700",   bg: "bg-rose-50",    border: "border-rose-200",   activeBg: "bg-rose-600",    activeBorder: "border-rose-600"    },
+};
+
+const categories: Category[] = ["AI Agents", "Discovery", "Analysis", "Planning", "Compliance", "Communication"];
+
+export default function ArtifactsGrid() {
+  const [active, setActive] = useState<Category | null>(null);
+
+  const visible = active ? artifacts.filter((a) => a.category === active) : artifacts;
+
+  return (
+    <>
+      {/* Filter pills */}
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-10">
+        <div className="flex flex-wrap gap-3">
+          {categories.map((cat) => {
+            const meta = categoryMeta[cat];
+            const isActive = active === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setActive(isActive ? null : cat)}
+                className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150 ${
+                  isActive
+                    ? `${meta.activeBg} ${meta.activeBorder} text-white`
+                    : `${meta.color} ${meta.bg} ${meta.border} hover:opacity-80`
+                }`}
+              >
+                {cat}
+                {isActive && (
+                  <span aria-hidden="true" className="text-white/70">×</span>
+                )}
+              </button>
+            );
+          })}
+          {active && (
+            <button
+              type="button"
+              onClick={() => setActive(null)}
+              className="cursor-pointer inline-flex items-center rounded-full border border-line px-3 py-1 text-xs font-medium text-ink-soft hover:text-ink transition-colors duration-150"
+            >
+              Show all
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Grid */}
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-28">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {visible.map((artifact) => {
+            const meta = categoryMeta[artifact.category];
+            return (
+              <div
+                key={artifact.title}
+                className="group flex flex-col rounded-xl border border-line bg-paper p-6 hover:border-accent/30 hover:shadow-sm transition-all duration-200"
+              >
+                <span
+                  className={`self-start inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold tracking-wide ${meta.color} ${meta.bg} ${meta.border}`}
+                >
+                  {artifact.category}
+                </span>
+
+                <h3 className="mt-4 font-heading font-semibold text-ink leading-snug">
+                  {artifact.title}
+                </h3>
+
+                <p className="mt-2 text-sm text-ink-soft leading-6 flex-grow">
+                  {artifact.description}
+                </p>
+
+                <div className="mt-5 pt-4 border-t border-line">
+                  <p className="text-[11px] font-semibold tracking-widest uppercase text-ink-faint mb-2">
+                    Used in
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {artifact.usedIn.map((project) => (
+                      <span
+                        key={project}
+                        className={`rounded-md px-2 py-0.5 text-[11px] font-medium ${
+                          project === "In Progress"
+                            ? "bg-amber-50 text-amber-700 border border-amber-200"
+                            : "bg-muted text-ink-soft"
+                        }`}
+                      >
+                        {project === "In Progress" ? "⚙ In Progress" : project}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
+}
