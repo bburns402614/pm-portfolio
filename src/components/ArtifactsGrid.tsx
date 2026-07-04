@@ -215,7 +215,7 @@ export default function ArtifactsGrid() {
                 key={cat}
                 type="button"
                 onClick={() => setActive(isActive ? null : cat)}
-                className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150 ${
+                className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                   isActive
                     ? `${meta.activeBg} ${meta.activeBorder} text-white`
                     : `${meta.color} ${meta.bg} ${meta.border} hover:opacity-80`
@@ -232,7 +232,7 @@ export default function ArtifactsGrid() {
             <button
               type="button"
               onClick={() => setActive(null)}
-              className="cursor-pointer inline-flex items-center rounded-full border border-line px-3 py-1 text-xs font-medium text-ink-soft hover:text-ink transition-colors duration-150"
+              className="cursor-pointer inline-flex items-center rounded-full border border-line px-3 py-1 text-xs font-medium text-ink-soft hover:text-ink transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
             >
               Show all
             </button>
@@ -278,7 +278,7 @@ export default function ArtifactsGrid() {
                             : "bg-muted text-ink-soft"
                         }`}
                       >
-                        {project === "In Progress" ? "⚙ In Progress" : project}
+                        {project === "In Progress" ? "In Progress" : project}
                       </span>
                     ))}
                   </div>

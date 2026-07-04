@@ -96,7 +96,7 @@ export default function About() {
               <h2 className="text-xs font-semibold tracking-widest uppercase text-ink-faint mb-4">Skills</h2>
               <div className="flex flex-wrap gap-1.5">
                 {skills.map((skill) => (
-                  <span key={skill} className="bg-accent-soft text-accent-strong text-xs font-medium px-2.5 py-1 rounded-full">
+                  <span key={skill} className="bg-accent-soft text-accent text-xs font-medium px-2.5 py-1 rounded-full">
                     {skill}
                   </span>
                 ))}
@@ -141,7 +141,7 @@ export default function About() {
                     <ul className="space-y-2">
                       {job.bullets.map((b, i) => (
                         <li key={i} className="flex gap-3 text-ink-soft text-sm leading-6">
-                          <span className="text-brass mt-0.5 shrink-0">—</span>
+                          <span className="text-accent mt-0.5 shrink-0">—</span>
                           {b}
                         </li>
                       ))}

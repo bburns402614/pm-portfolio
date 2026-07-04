@@ -50,7 +50,7 @@ export default function NavBar() {
           ))}
           <a
             href="mailto:burns.655@icloud.com"
-            className="cursor-pointer rounded-full bg-ink px-4 py-2 text-sm font-medium text-white hover:bg-accent transition-colors duration-200"
+            className="cursor-pointer rounded-full bg-ink px-4 py-2 text-sm font-medium text-white hover:bg-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
           >
             Get in touch
           </a>

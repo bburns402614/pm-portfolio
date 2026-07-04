@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects | Breanna Burns",
+  description: "Case studies from Breanna Burns — fintech, healthcare, and internal tooling delivered end-to-end.",
+};
+
 const projects = [
   {
     id: "direct-merchant-application",
@@ -106,10 +113,7 @@ const projects = [
     ],
     outcomes: [
       { stat: "70%", label: "reduction in credentialing turnaround time" },
-      {
-        stat: "Fewer denials",
-        label: "claims denial rate reduced through improved accuracy",
-      },
+      { stat: "Fewer denials", label: "claims denial rate reduced through improved accuracy" },
       { stat: "Compliance", label: "improved regulatory compliance posture" },
     ],
     tools: ["Process Mapping", "Cross-department Coordination", "Compliance Workflows"],
@@ -142,38 +146,49 @@ const highlights = [
 
 export default function Projects() {
   return (
-    <div className="bg-background py-20">
-      <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <div className="max-w-2xl mb-20">
-          <span className="text-xs font-semibold tracking-widest uppercase text-ink-faint">Case Studies</span>
-          <h1 className="mt-3 font-serif text-4xl text-ink">Projects</h1>
-          <p className="mt-4 text-lg text-ink-soft leading-7">
-            A look at how I approach problems — from discovery through delivery and iteration.
+    <div className="bg-background">
+      {/* Hero */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-grain" />
+        <div className="relative mx-auto max-w-5xl px-6 pt-28 pb-20 sm:pt-36 sm:pb-24 lg:px-8">
+          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-ink-soft">
+            Case Studies
+          </span>
+          <h1 className="mt-10 font-heading font-bold text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] tracking-tight text-ink">
+            How I approach problems.
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft">
+            From discovery through delivery and iteration — across fintech, healthcare, and internal tooling.
           </p>
         </div>
+      </div>
 
-        <div className="space-y-16">
+      {/* Project cards */}
+      <div className="mx-auto max-w-5xl px-6 lg:px-8 py-16">
+        <div className="space-y-12">
           {projects.map((p, idx) => (
             <div
               key={p.id}
-              className="rounded-2xl border border-line bg-paper p-8 sm:p-12 transition-shadow hover:shadow-[0_2px_24px_rgba(23,24,28,0.06)]"
+              className="rounded-2xl border border-line bg-paper p-8 sm:p-12 transition-all duration-200 hover:border-accent/30 hover:shadow-[0_4px_32px_rgba(37,99,235,0.08)]"
             >
+              {/* Card header */}
               <div className="flex items-start justify-between gap-6 mb-8">
                 <div className="flex items-center gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent-strong font-serif text-sm">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white font-heading font-bold text-xs tracking-tight">
                     {p.initials}
                   </span>
                   <div>
-                    <p className="text-sm text-ink-soft">{p.period}</p>
-                    <h2 className="font-serif text-2xl text-ink">{p.title}</h2>
+                    <p className="text-xs font-medium tracking-wide text-ink-soft">{p.period}</p>
+                    <h2 className="font-heading font-bold text-xl tracking-tight text-ink leading-snug">{p.title}</h2>
                   </div>
                 </div>
-                <span className="font-serif italic text-3xl text-line hidden sm:block">
+                <span className="font-heading font-bold text-5xl text-foreground/[0.04] select-none hidden sm:block tabular-nums">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              <div className="mb-6 flex flex-wrap gap-2">
+              {/* Tags */}
+              <div className="mb-8 flex flex-wrap gap-2">
                 {p.tags.map((tag) => (
                   <span
                     key={tag}
@@ -185,6 +200,7 @@ export default function Projects() {
               </div>
 
               <div className="space-y-8">
+                {/* Challenge */}
                 <div>
                   <h3 className="mb-3 text-xs font-semibold tracking-widest text-ink-faint uppercase">
                     The Challenge
@@ -192,6 +208,7 @@ export default function Projects() {
                   <p className="leading-7 text-ink-soft">{p.challenge}</p>
                 </div>
 
+                {/* Approach */}
                 <div>
                   <h3 className="mb-3 text-xs font-semibold tracking-widest text-ink-faint uppercase">
                     My Approach
@@ -199,7 +216,7 @@ export default function Projects() {
                   <ul className="space-y-3">
                     {p.approach.map((step, i) => (
                       <li key={i} className="flex gap-3 leading-6 text-ink-soft">
-                        <span className="mt-0.5 shrink-0 font-medium text-brass">
+                        <span className="mt-0.5 shrink-0 font-heading font-bold text-accent text-sm">
                           {i + 1}.
                         </span>
                         {step}
@@ -208,22 +225,24 @@ export default function Projects() {
                   </ul>
                 </div>
 
+                {/* Outcomes */}
                 <div>
                   <h3 className="mb-4 text-xs font-semibold tracking-widest text-ink-faint uppercase">
                     Outcomes
                   </h3>
-                  <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                  <dl className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                     {p.outcomes.map((o) => (
-                      <div key={o.label} className="rounded-xl bg-accent-soft p-4">
-                        <dt className="font-serif text-2xl text-accent-strong">
+                      <div key={o.label} className="rounded-xl bg-ink p-5">
+                        <dt className="font-heading font-bold text-3xl text-white tracking-tight">
                           {o.stat}
                         </dt>
-                        <dd className="mt-1 text-sm text-ink-soft">{o.label}</dd>
+                        <dd className="mt-1.5 text-sm text-white/50 leading-5">{o.label}</dd>
                       </div>
                     ))}
                   </dl>
                 </div>
 
+                {/* Tools */}
                 <div>
                   <h3 className="mb-3 text-xs font-semibold tracking-widest text-ink-faint uppercase">
                     Tools & Methods
@@ -232,7 +251,7 @@ export default function Projects() {
                     {p.tools.map((t) => (
                       <span
                         key={t}
-                        className="rounded bg-background px-2.5 py-1 text-xs text-ink-soft"
+                        className="rounded-md bg-muted px-2.5 py-1 text-xs font-medium text-ink-soft"
                       >
                         {t}
                       </span>
@@ -248,20 +267,20 @@ export default function Projects() {
         <div className="mt-24 border-t border-line pt-16">
           <div className="max-w-2xl mb-10">
             <span className="text-xs font-semibold tracking-widest uppercase text-ink-faint">Also Shipped</span>
-            <h2 className="mt-3 font-serif text-2xl text-ink">Additional Highlights</h2>
+            <h2 className="mt-3 font-heading font-bold text-2xl tracking-tight text-ink">Additional Highlights</h2>
             <p className="mt-3 text-ink-soft leading-7">
               Smaller-scope initiatives delivered alongside the platforms above.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-px bg-line sm:grid-cols-3 border border-line rounded-2xl overflow-hidden">
             {highlights.map((h) => (
-              <div key={h.id} className="bg-paper p-7">
-                <div className="mb-3 h-1 w-8 bg-brass" />
-                <h3 className="font-semibold text-ink">{h.title}</h3>
+              <div key={h.id} className="bg-paper p-7 hover:bg-accent-soft transition-colors duration-200">
+                <div className="mb-4 h-0.5 w-10 bg-accent" />
+                <h3 className="font-heading font-semibold text-ink">{h.title}</h3>
                 <p className="mt-2 text-sm text-ink-soft leading-6">{h.description}</p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {h.tools.map((t) => (
-                    <span key={t} className="rounded bg-background px-2 py-0.5 text-xs text-ink-faint">
+                    <span key={t} className="rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-ink-soft">
                       {t}
                     </span>
                   ))}

@@ -57,7 +57,7 @@ export default function Home() {
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
               href="/projects"
-              className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent transition-colors duration-200"
+              className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
             >
               View Case Studies
             </Link>
