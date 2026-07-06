@@ -34,7 +34,7 @@ const projects = [
     company: "IOU Financial",
     initials: "BP",
     title: "Broker Portal: Built From the Ground Up",
-    period: "IOU Financial · 2022 – Present",
+    period: "IOU Financial · 2021 – 2024",
     tags: ["Fintech", "Compliance", "0→1", "Multi-tenant"],
     challenge:
       "IOU had no dedicated platform for its broker network — brokers needed a reliable way to submit and track loan applications, while IOU needed state-specific disclosure compliance and protection against duplicate submissions across a fast-growing broker base.",
@@ -58,7 +58,7 @@ const projects = [
     company: "IOU Financial",
     initials: "AE",
     title: "AE Workstation: Automating Email-Based Loan Intake",
-    period: "IOU Financial · 2022 – Present",
+    period: "IOU Financial · 2024 – 2025",
     tags: ["Internal Tools", "Automation", "Document Parsing"],
     challenge:
       "Account Executives were processing loan submissions that arrived by email — a slow, manual, error-prone path that didn't scale as submission volume grew and pulled AEs away from higher-value work.",
