@@ -78,8 +78,17 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
           {/* Sidebar */}
           <Reveal as="aside" className="lg:sticky lg:top-28 lg:self-start">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-white transition-transform duration-300 hover:scale-105 hover:rotate-3">
-              <Logo className="h-8 w-8 text-white" />
+            <div className="relative w-full max-w-[15rem]">
+              <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-gradient-to-br from-accent to-violet-600" />
+              <div aria-hidden="true" className="absolute -left-2 -bottom-2 z-[2] flex h-12 w-12 items-center justify-center rounded-full bg-ink text-white">
+                <Logo className="h-6 w-6 text-white" />
+              </div>
+              <div className="group relative overflow-hidden rounded-2xl bg-muted shadow-[0_10px_30px_-12px_rgba(37,99,235,0.35)]" style={{ aspectRatio: "1086 / 1448" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/portrait.png" alt="Breanna Burns, Product Manager" className="block h-full w-full object-cover object-top grayscale contrast-[1.08] brightness-[1.03] transition-transform duration-700 group-hover:scale-105" />
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent to-violet-600 opacity-90 mix-blend-color" />
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/35 to-transparent" />
+              </div>
             </div>
             <h1 className="mt-6 font-heading font-bold text-3xl tracking-tight text-ink">Breanna Burns</h1>
             <p className="mt-1 text-sm font-medium text-accent">Product Manager</p>
