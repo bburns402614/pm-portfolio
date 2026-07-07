@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Logo from "@/components/Logo";
 
 const experience = [
   {
@@ -77,8 +78,8 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
           {/* Sidebar */}
           <Reveal as="aside" className="lg:sticky lg:top-28 lg:self-start">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-white font-heading font-bold text-sm tracking-tight transition-transform duration-300 hover:scale-105 hover:rotate-3">
-              BB
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-white transition-transform duration-300 hover:scale-105 hover:rotate-3">
+              <Logo className="h-8 w-8 text-white" />
             </div>
             <h1 className="mt-6 font-heading font-bold text-3xl tracking-tight text-ink">Breanna Burns</h1>
             <p className="mt-1 text-sm font-medium text-accent">Product Manager</p>
