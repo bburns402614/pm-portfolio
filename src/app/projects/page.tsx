@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Reveal from "@/components/Reveal";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export const metadata: Metadata = {
   title: "Projects | Breanna Burns",
@@ -150,16 +152,26 @@ export default function Projects() {
       {/* Hero */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grain" />
+        <div
+          aria-hidden="true"
+          className="animate-float-a absolute -top-20 -right-20 h-80 w-80 rounded-full bg-accent/10 blur-3xl"
+        />
         <div className="relative mx-auto max-w-5xl px-6 pt-28 pb-20 sm:pt-36 sm:pb-24 lg:px-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-ink-soft">
-            Case Studies
-          </span>
-          <h1 className="mt-10 font-heading font-bold text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] tracking-tight text-ink">
-            How I approach problems.
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft">
-            From discovery through delivery and iteration — across fintech, healthcare, and internal tooling.
-          </p>
+          <Reveal>
+            <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-ink-soft">
+              Case Studies
+            </span>
+          </Reveal>
+          <Reveal delay={100}>
+            <h1 className="mt-10 font-heading font-bold text-[clamp(2.5rem,7vw,5rem)] leading-[0.95] tracking-tight text-ink">
+              How I approach problems.
+            </h1>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft">
+              From discovery through delivery and iteration — across fintech, healthcare, and internal tooling.
+            </p>
+          </Reveal>
         </div>
       </div>
 
@@ -167,9 +179,10 @@ export default function Projects() {
       <div className="mx-auto max-w-5xl px-6 lg:px-8 py-16">
         <div className="space-y-12">
           {projects.map((p, idx) => (
-            <div
+            <Reveal
               key={p.id}
-              className="rounded-2xl border border-line bg-paper p-8 sm:p-12 transition-all duration-200 hover:border-accent/30 hover:shadow-[0_4px_32px_rgba(37,99,235,0.08)]"
+              delay={Math.min(idx, 3) * 80}
+              className="group rounded-2xl border border-line bg-paper p-8 sm:p-12 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_4px_32px_rgba(37,99,235,0.08)] hover:-translate-y-1"
             >
               {/* Card header */}
               <div className="flex items-start justify-between gap-6 mb-8">
@@ -232,9 +245,9 @@ export default function Projects() {
                   </h3>
                   <dl className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                     {p.outcomes.map((o) => (
-                      <div key={o.label} className="rounded-xl bg-ink p-5">
-                        <dt className="font-heading font-bold text-3xl text-white tracking-tight">
-                          {o.stat}
+                      <div key={o.label} className="rounded-xl bg-ink p-5 transition-transform duration-200 hover:-translate-y-0.5">
+                        <dt className="font-heading font-bold text-3xl text-white tracking-tight tabular-nums">
+                          <AnimatedCounter value={o.stat} />
                         </dt>
                         <dd className="mt-1.5 text-sm text-white/50 leading-5">{o.label}</dd>
                       </div>
@@ -259,33 +272,35 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Additional highlights */}
         <div className="mt-24 border-t border-line pt-16">
-          <div className="max-w-2xl mb-10">
+          <Reveal className="max-w-2xl mb-10">
             <span className="text-xs font-semibold tracking-widest uppercase text-ink-faint">Also Shipped</span>
             <h2 className="mt-3 font-heading font-bold text-2xl tracking-tight text-ink">Additional Highlights</h2>
             <p className="mt-3 text-ink-soft leading-7">
               Smaller-scope initiatives delivered alongside the platforms above.
             </p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 gap-px bg-line sm:grid-cols-3 border border-line rounded-2xl overflow-hidden">
-            {highlights.map((h) => (
-              <div key={h.id} className="bg-paper p-7 hover:bg-accent-soft transition-colors duration-200">
-                <div className="mb-4 h-0.5 w-10 bg-accent" />
-                <h3 className="font-heading font-semibold text-ink">{h.title}</h3>
-                <p className="mt-2 text-sm text-ink-soft leading-6">{h.description}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {h.tools.map((t) => (
-                    <span key={t} className="rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-ink-soft">
-                      {t}
-                    </span>
-                  ))}
+            {highlights.map((h, i) => (
+              <Reveal key={h.id} delay={i * 90}>
+                <div className="bg-paper p-7 h-full hover:bg-accent-soft hover:-translate-y-1 hover:shadow-md transition-all duration-200">
+                  <div className="mb-4 h-0.5 w-10 bg-accent" />
+                  <h3 className="font-heading font-semibold text-ink">{h.title}</h3>
+                  <p className="mt-2 text-sm text-ink-soft leading-6">{h.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {h.tools.map((t) => (
+                      <span key={t} className="rounded-md bg-muted px-2 py-0.5 text-xs font-medium text-ink-soft">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

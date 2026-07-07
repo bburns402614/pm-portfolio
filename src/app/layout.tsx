@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const body = Archivo({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en" className={`${body.variable} ${heading.variable}`}>
       <body className="font-sans antialiased">
         <div className="min-h-screen flex flex-col">
+          <ScrollProgress />
           {/* Navigation */}
           <nav className="sticky top-0 z-50 border-b border-line bg-paper/80 backdrop-blur-md">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
