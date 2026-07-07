@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Reveal from "@/components/Reveal";
 
 type Category = "AI Agents" | "Discovery" | "Analysis" | "Planning" | "Compliance" | "Communication";
 
@@ -215,7 +216,7 @@ export default function ArtifactsGrid() {
                 key={cat}
                 type="button"
                 onClick={() => setActive(isActive ? null : cat)}
-                className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                   isActive
                     ? `${meta.activeBg} ${meta.activeBorder} text-white`
                     : `${meta.color} ${meta.bg} ${meta.border} hover:opacity-80`
@@ -243,12 +244,13 @@ export default function ArtifactsGrid() {
       {/* Grid */}
       <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-28">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((artifact) => {
+          {visible.map((artifact, i) => {
             const meta = categoryMeta[artifact.category];
             return (
-              <div
+              <Reveal
                 key={artifact.title}
-                className="group flex flex-col rounded-xl border border-line bg-paper p-6 hover:border-accent/30 hover:shadow-sm transition-all duration-200"
+                delay={(i % 6) * 60}
+                className="group flex flex-col rounded-xl border border-line bg-paper p-6 hover:border-accent/30 hover:shadow-md hover:-translate-y-1 transition-all duration-200"
               >
                 <span
                   className={`self-start inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold tracking-wide ${meta.color} ${meta.bg} ${meta.border}`}
@@ -283,7 +285,7 @@ export default function ArtifactsGrid() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

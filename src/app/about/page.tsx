@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const experience = [
   {
     role: 'Product Manager',
@@ -74,8 +76,8 @@ export default function About() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
           {/* Sidebar */}
-          <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-white font-heading font-bold text-sm tracking-tight">
+          <Reveal as="aside" className="lg:sticky lg:top-28 lg:self-start">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-white font-heading font-bold text-sm tracking-tight transition-transform duration-300 hover:scale-105 hover:rotate-3">
               BB
             </div>
             <h1 className="mt-6 font-heading font-bold text-3xl tracking-tight text-ink">Breanna Burns</h1>
@@ -96,41 +98,45 @@ export default function About() {
               <h2 className="text-xs font-semibold tracking-widest uppercase text-ink-faint mb-4">Skills</h2>
               <div className="flex flex-wrap gap-1.5">
                 {skills.map((skill) => (
-                  <span key={skill} className="bg-accent-soft text-accent text-xs font-medium px-2.5 py-1 rounded-full">
+                  <span key={skill} className="bg-accent-soft text-accent text-xs font-medium px-2.5 py-1 rounded-full transition-transform duration-150 hover:scale-105">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
-          </aside>
+          </Reveal>
 
           {/* Main */}
           <div>
-            <p className="text-lg leading-8 text-ink-soft max-w-2xl">
-              Product Manager with 10+ years of experience across fintech and regulated consumer
-              products. I&apos;ve led multiple platform builds end-to-end — Broker Portal, AE
-              Workstation, and Direct Merchant Application — using funnel analysis and FullStory
-              session replay to identify friction and ship improvements.
-            </p>
-            <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
-              Strong cross-functional partner to Engineering, Design, Ops, and Compliance;
-              experienced with third-party integrations (Plaid, Lendflow, Salesforce, Experian)
-              and building reliable lifecycle workflows.
-            </p>
-            <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
-              I prototype and build with AI — not just prompt it. I&apos;ve built agents for
-              customer feedback synthesis, PRD generation, and sprint prioritization using the
-              Anthropic SDK, and I completed Google&apos;s 5-Day AI Agent Intensive. Currently
-              building an SDR agent for automated outbound prospecting.
-            </p>
+            <Reveal>
+              <p className="text-lg leading-8 text-ink-soft max-w-2xl">
+                Product Manager with 10+ years of experience across fintech and regulated consumer
+                products. I&apos;ve led multiple platform builds end-to-end — Broker Portal, AE
+                Workstation, and Direct Merchant Application — using funnel analysis and FullStory
+                session replay to identify friction and ship improvements.
+              </p>
+              <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
+                Strong cross-functional partner to Engineering, Design, Ops, and Compliance;
+                experienced with third-party integrations (Plaid, Lendflow, Salesforce, Experian)
+                and building reliable lifecycle workflows.
+              </p>
+              <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
+                I prototype and build with AI — not just prompt it. I&apos;ve built agents for
+                customer feedback synthesis, PRD generation, and sprint prioritization using the
+                Anthropic SDK, and I completed Google&apos;s 5-Day AI Agent Intensive. Currently
+                building an SDR agent for automated outbound prospecting.
+              </p>
+            </Reveal>
 
             {/* Experience timeline */}
             <div className="mt-16">
-              <h2 className="font-heading font-bold text-2xl tracking-tight text-ink mb-10">Experience</h2>
+              <Reveal>
+                <h2 className="font-heading font-bold text-2xl tracking-tight text-ink mb-10">Experience</h2>
+              </Reveal>
               <div className="relative space-y-12 border-l border-line pl-8">
-                {experience.map((job) => (
-                  <div key={job.role + job.company} className="relative">
-                    <span className="absolute -left-[2.35rem] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-background" />
+                {experience.map((job, i) => (
+                  <Reveal key={job.role + job.company} delay={i * 100} className="relative">
+                    <span className="animate-soft-pulse absolute -left-[2.35rem] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-background" />
                     <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3 gap-1">
                       <div>
                         <h3 className="text-lg font-semibold text-ink">{job.role}</h3>
@@ -146,13 +152,13 @@ export default function About() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
 
             {/* Education & Certs */}
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-12 border-t border-line pt-12">
+            <Reveal className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-12 border-t border-line pt-12">
               <div>
                 <h2 className="font-heading font-bold text-2xl tracking-tight text-ink mb-4">Education</h2>
                 <p className="font-medium text-ink">The Ohio State University</p>
@@ -169,7 +175,7 @@ export default function About() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>
