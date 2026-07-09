@@ -128,21 +128,28 @@ export default function Personal() {
             </h2>
 
             <p className="text-ink-soft leading-8 text-lg">
-              I&apos;m married, and home is where the chaos lives, in the best way. We have a son named
-              Leo and two dogs who have firmly decided they run the household.
+              Married, two dogs, and a toddler named Leo who has strong opinions about everything.
+              Home is chaotic and I wouldn&apos;t change it.
             </p>
 
             <p className="mt-4 text-ink-soft leading-8">
-              Honestly, being a mom has made me a sharper PM. You get very good at triaging fast, reading
-              a room without much information, and staying calm when everything is happening at once.
-              Leo keeps me grounded in what actually matters.
+              When I&apos;m not working, I&apos;m usually knee-deep in a home renovation project, out
+              in the garden, or at my ceramics wheel. Hobbyist ceramicist is a title I wear proudly.
+              There&apos;s something about making something with your hands that completely resets your brain.
             </p>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <p className="mt-4 text-ink-soft leading-8">
+              We&apos;re Columbus people through and through. I went to Ohio State and genuinely love
+              this city. A big chunk of our weekends goes toward finding places that work for a toddler
+              and two dogs at the same time, which is more of a research project than it sounds.
+            </p>
+
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { label: "Partner", value: "Married" },
                 { label: "Son", value: "Leo" },
                 { label: "Dogs", value: "Two (they're in charge)" },
+                { label: "Hobby", value: "Ceramics" },
               ].map((item) => (
                 <div
                   key={item.label}
