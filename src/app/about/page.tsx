@@ -7,13 +7,13 @@ const experience = [
     company: 'IOU Financial',
     period: 'Feb 2022 – Present',
     bullets: [
-      'Led the Retail Application (merchant-facing) from concept → MVP → iteration, defining product narrative, journey map, and phased launch plan.',
-      'Conducted competitor analysis to inform onboarding patterns and verification sequencing; translated insights into roadmap priorities.',
-      'Owned activation-critical steps (OTP/email verification, revenue verification, submission readiness) and drove funnel improvements to reduce friction.',
-      'Used FullStory session replay to validate funnel findings, uncover UX failure patterns, and convert insights into iterative product/UX changes.',
-      'Led integrations with Heron, Baselayer, and partners to automate document parsing and data validation for smoother onboarding.',
-      'Designed exception-handling and validation logic that reduced manual intervention by 40%.',
-      'Built lifecycle visibility by defining application status semantics that enable better follow-up and operational execution.',
+      'Led the Direct Merchant Application from concept through MVP and iteration, defining the journey map, product scope, and phased launch plan.',
+      'Ran competitor onboarding analysis to inform verification sequencing and step order; findings shaped the first-year roadmap.',
+      'Owned activation-critical steps including OTP verification, revenue verification, and submission readiness; funnel improvements cut drop-off at each.',
+      'Used FullStory session replay to validate funnel data, surface UX failure patterns, and drive iterative fixes sprint over sprint.',
+      'Led integrations with Heron and Baselayer to automate document parsing and data validation, reducing manual review load.',
+      '40% reduction in manual intervention from exception-handling and validation logic I designed.',
+      'Defined application status semantics to give AEs and Ops clear lifecycle visibility and improve follow-up accuracy.',
     ],
   },
   {
@@ -21,9 +21,9 @@ const experience = [
     company: 'Quantum Health · Columbus, OH',
     period: 'Mar 2021 – Feb 2022',
     bullets: [
-      'Translated customer and business needs into user stories and acceptance criteria; supported iterative delivery to improve feature quality and adoption.',
-      'Established feedback loops to identify post-launch friction and refine user workflows.',
-      'Improved delivery efficiency by 28% through backlog prioritization and workflow improvements.',
+      'Wrote user stories and acceptance criteria tied directly to customer and business needs; supported iterative delivery to improve feature quality and adoption.',
+      'Established feedback loops to catch post-launch friction early and refine workflows before it compounded.',
+      '28% improvement in delivery efficiency through backlog prioritization and workflow changes.',
     ],
   },
   {
@@ -31,8 +31,8 @@ const experience = [
     company: 'Radiology Partners · Columbus, OH',
     period: 'Nov 2018 – Mar 2021',
     bullets: [
-      'Led implementation of AIDoc as a proof of concept, coordinating stakeholders and integrations (PACS/EHR/speech recognition); successful pilot expanded into nationwide usage.',
-      'Supported AI-enabled diagnostic tool integrations and workflow adoption across clinical and technical teams.',
+      'Led the AIDoc proof of concept: coordinated stakeholders, delivered PACS/EHR/speech recognition integrations, and structured the pilot to generate clear outcomes. It expanded to nationwide usage.',
+      'Supported AI diagnostic tool integrations and workflow adoption across clinical and technical teams.',
     ],
   },
   {
@@ -40,8 +40,8 @@ const experience = [
     company: 'Buckeye Health Plan · Columbus, OH',
     period: 'Nov 2015 – Nov 2018',
     bullets: [
-      'Led cross-department initiatives supporting regulatory compliance and process improvements.',
-      'Reduced credentialing turnaround time by 70% and improved processes that reduced claims denials.',
+      'Led cross-department initiatives for regulatory compliance and process improvement.',
+      'Reduced credentialing turnaround time 70% and tightened processes that were driving claims denials.',
     ],
   },
 ]
@@ -120,21 +120,22 @@ export default function About() {
           <div>
             <Reveal>
               <p className="text-lg leading-8 text-ink-soft max-w-2xl">
-                Product Manager with 10+ years of experience across fintech and regulated consumer
-                products. I&apos;ve led multiple platform builds end-to-end — Broker Portal, AE
-                Workstation, and Direct Merchant Application — using funnel analysis and FullStory
-                session replay to identify friction and ship improvements.
+                Product Manager with 10+ years in fintech and regulated consumer products. I&apos;ve
+                led three platform builds from scratch: Broker Portal, AE Workstation, and Direct
+                Merchant Application. Funnel analysis and FullStory session replay are how I find
+                friction. Shipped improvements are how I close it.
               </p>
               <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
-                Strong cross-functional partner to Engineering, Design, Ops, and Compliance;
-                experienced with third-party integrations (Plaid, Lendflow, Salesforce, Experian)
-                and building reliable lifecycle workflows.
+                I work closely with Engineering, Design, Ops, and Compliance as a day-to-day partner.
+                Third-party integrations are a big part of what I do: Plaid, Lendflow, Salesforce,
+                Experian. Lifecycle workflows are where I invest significant engineering time to make
+                sure nothing slips through.
               </p>
               <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
-                I prototype and build with AI — not just prompt it. I&apos;ve built agents for
-                customer feedback synthesis, PRD generation, and sprint prioritization using the
-                Anthropic SDK, and I completed Google&apos;s 5-Day AI Agent Intensive. Currently
-                building an SDR agent for automated outbound prospecting.
+                I build with AI, not just prompt it. Agents for feedback synthesis, PRD generation,
+                and sprint prioritization are already running on the Anthropic SDK. I finished
+                Google&apos;s 5-Day AI Agent Intensive and I&apos;m currently building an SDR agent
+                for automated outbound prospecting.
               </p>
             </Reveal>
 

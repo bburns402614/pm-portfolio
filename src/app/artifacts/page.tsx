@@ -20,8 +20,8 @@ export default function ArtifactsPage() {
             Artifacts I actually use.
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft">
-            These are the frameworks, templates, and thinking tools I reach for across discovery,
-            analysis, planning, compliance, and stakeholder work — built and refined on real projects.
+            The frameworks, templates, and tools I reach for across discovery, analysis, planning,
+            compliance, and stakeholder work. All built and refined on real projects.
           </p>
         </div>
       </div>

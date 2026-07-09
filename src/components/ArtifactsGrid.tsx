@@ -27,7 +27,7 @@ const artifacts: Artifact[] = [
     category: "AI Agents",
     title: "Customer Feedback Synthesis Agent",
     description:
-      "Aggregates feedback from support tickets, user interviews, and NPS data, then synthesizes patterns, sentiment, and feature requests into a structured PM brief — cutting hours of manual analysis into minutes.",
+      "Aggregates feedback from support tickets, user interviews, and NPS data, then synthesizes patterns, sentiment, and feature requests into a structured PM brief. Hours of manual analysis, done in minutes.",
     usedIn: ["Direct Merchant Application", "Broker Portal"],
     preview: [
       { type: "fields", items: [
@@ -54,7 +54,7 @@ const artifacts: Artifact[] = [
     category: "AI Agents",
     title: "PRD and Documentation Generator",
     description:
-      "Takes a feature brief or problem statement and produces a structured PRD draft — problem framing, user stories, acceptance criteria, and open questions — as a first-pass for PM refinement rather than blank-page authoring.",
+      "Takes a feature brief or problem statement and produces a structured PRD draft covering problem framing, user stories, acceptance criteria, and open questions. A first-pass for PM refinement, not blank-page authoring.",
     usedIn: ["Direct Merchant Application", "AE Workstation", "Broker Portal"],
     preview: [
       { type: "fields", items: [
@@ -81,7 +81,7 @@ const artifacts: Artifact[] = [
     category: "AI Agents",
     title: "Sprint Planning and Prioritization Agent",
     description:
-      "Scores the backlog by impact, effort, and strategic alignment, then outputs a recommended sprint plan with rationale for each inclusion and deferral — making tradeoffs explicit before planning meetings.",
+      "Scores the backlog by impact, effort, and strategic alignment, then outputs a recommended sprint plan with rationale for each inclusion and deferral. Tradeoffs on paper before the planning meeting starts.",
     usedIn: ["Direct Merchant Application", "Broker Portal"],
     preview: [
       { type: "table", headers: ["Ticket", "Impact", "Effort", "Alignment", "Score", "Rec."], rows: [
@@ -99,7 +99,7 @@ const artifacts: Artifact[] = [
     category: "AI Agents",
     title: "Development Agent Pipeline",
     description:
-      "Multi-agent system covering intake, architecture planning, UI/UX review, implementation, and code review — each agent specialized for its lane. Built to compress the ideation-to-shipped cycle on real product work.",
+      "Multi-agent system covering intake, architecture planning, UI/UX review, implementation, and code review. Each agent specialized for its lane. Built to compress the ideation-to-shipped cycle on real product work.",
     usedIn: ["PM Portfolio (this site)"],
     preview: [
       { type: "table", headers: ["Agent", "Role", "Input", "Output"], rows: [
@@ -117,7 +117,7 @@ const artifacts: Artifact[] = [
     category: "AI Agents",
     title: "SDR Agent",
     description:
-      "Autonomous outbound agent for lead research, personalized outreach drafting, and follow-up sequencing — built to reduce manual prospecting time and keep reps focused on qualified conversations.",
+      "Autonomous outbound agent for lead research, personalized outreach drafting, and follow-up sequencing. Cuts manual prospecting time and keeps reps focused on qualified conversations.",
     usedIn: ["In Progress"],
     preview: [
       { type: "fields", items: [
@@ -140,7 +140,7 @@ const artifacts: Artifact[] = [
     category: "Discovery",
     title: "Onboarding Drop-off Interview Guide",
     description:
-      "Structured merchant interview framework to pinpoint where and why applicants abandon mid-flow — separating UX friction from trust or eligibility blockers.",
+      "Structured merchant interview framework to pinpoint where and why applicants abandon. Separates UX friction from trust and eligibility blockers.",
     usedIn: ["Direct Merchant Application"],
     preview: [
       { type: "fields", items: [
@@ -183,7 +183,7 @@ const artifacts: Artifact[] = [
     category: "Discovery",
     title: "Stakeholder Kickoff Brief",
     description:
-      "Pre-sprint alignment doc covering problem statement, scope boundaries, decision owners, and open questions — keeps Engineering, Compliance, and Ops on the same page before work starts.",
+      "Pre-sprint alignment doc covering problem statement, scope boundaries, decision owners, and open questions. Keeps Engineering, Compliance, and Ops aligned before work starts.",
     usedIn: ["AIDoc Rollout", "Credentialing Process", "AE Workstation"],
     preview: [
       { type: "fields", items: [
@@ -204,7 +204,7 @@ const artifacts: Artifact[] = [
     category: "Discovery",
     title: "Competitor Onboarding Audit",
     description:
-      "Side-by-side teardown of competitor application flows: step count, required fields, verification methods, and friction points — used to inform sequencing decisions.",
+      "Side-by-side teardown of competitor application flows: step count, required fields, verification methods, and friction points. Used to inform sequencing and step-order decisions.",
     usedIn: ["Direct Merchant Application", "Broker Portal"],
     preview: [
       { type: "table", headers: ["Competitor", "Steps", "Verification", "Est. time", "Notable pattern"], rows: [
@@ -264,7 +264,7 @@ const artifacts: Artifact[] = [
     category: "Analysis",
     title: "KPI Definition Framework",
     description:
-      "Maps each feature to leading indicators (submission rate, step completion) and lagging indicators (approval rate, time-to-fund) — defined before launch, not after.",
+      "Maps each feature to leading indicators (submission rate, step completion) and lagging indicators (approval rate, time-to-fund). Defined before launch, not after.",
     usedIn: ["Direct Merchant Application", "Broker Portal", "AE Workstation"],
     preview: [
       { type: "table", headers: ["Feature", "Leading Indicator", "Lagging Indicator", "Owner", "Cadence"], rows: [
@@ -280,7 +280,7 @@ const artifacts: Artifact[] = [
     category: "Analysis",
     title: "Exception & Error Rate Tracker",
     description:
-      "Log format and triage process for surfacing validation failures, integration timeouts, and parsing errors — separates noise from patterns worth engineering time.",
+      "Log format and triage process for surfacing validation failures, integration timeouts, and parsing errors. Separates noise from patterns worth engineering time.",
     usedIn: ["AE Workstation", "Direct Merchant Application"],
     preview: [
       { type: "table", headers: ["Error Type", "Count (7d)", "Trend", "Source", "Status"], rows: [
@@ -298,7 +298,7 @@ const artifacts: Artifact[] = [
     category: "Planning",
     title: "Integration Spec Template",
     description:
-      "API contract doc covering endpoint behavior, required fields, edge cases, failure modes, and rollback plan — written before engineering starts, not during.",
+      "API contract doc covering endpoint behavior, required fields, edge cases, failure modes, and rollback plan. Written before engineering starts, not during.",
     usedIn: ["Direct Merchant Application", "Broker Portal"],
     preview: [
       { type: "fields", items: [
@@ -393,7 +393,7 @@ const artifacts: Artifact[] = [
     category: "Compliance",
     title: "State Disclosure Review Checklist",
     description:
-      "CA and NY regulatory requirements mapped to specific feature behaviors — covers disclosure timing, consent language, and documentation audit trail.",
+      "CA and NY regulatory requirements mapped to specific feature behaviors. Covers disclosure timing, consent language, and documentation audit trail.",
     usedIn: ["Broker Portal"],
     preview: [
       { type: "table", headers: ["Requirement", "CA", "NY", "Feature Behavior", "Status"], rows: [
@@ -427,7 +427,7 @@ const artifacts: Artifact[] = [
     category: "Compliance",
     title: "PII & Data Handling Map",
     description:
-      "Documents every PII field collected, its purpose, consent mechanism, retention period, and access controls — built for regulated environments where audit trails matter.",
+      "Documents every PII field collected, its purpose, consent mechanism, retention period, and access controls. Built for regulated environments where audit trails matter.",
     usedIn: ["Direct Merchant Application", "Credentialing Process"],
     preview: [
       { type: "table", headers: ["PII Field", "Purpose", "Consent", "Retention", "Access"], rows: [
@@ -445,7 +445,7 @@ const artifacts: Artifact[] = [
     category: "Communication",
     title: "AE Handoff Brief",
     description:
-      "Structured context doc for Account Executives picking up a new application or workflow — covers what the product does, what the AE owns, and where to escalate edge cases.",
+      "Structured context doc for Account Executives picking up a new application or workflow. Covers what the product does, what the AE owns, and where to escalate edge cases.",
     usedIn: ["AE Workstation"],
     preview: [
       { type: "fields", items: [

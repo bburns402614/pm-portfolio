@@ -4,7 +4,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 
 export const metadata: Metadata = {
   title: "Projects | Breanna Burns",
-  description: "Case studies from Breanna Burns — fintech, healthcare, and internal tooling delivered end-to-end.",
+  description: "Case studies from Breanna Burns: fintech, healthcare, and internal tooling delivered end-to-end.",
 };
 
 const projects = [
@@ -16,7 +16,7 @@ const projects = [
     period: "IOU Financial · Live since March 2026",
     tags: ["Fintech", "Onboarding", "Credit Decisioning", "AI Prototyping"],
     challenge:
-      "IOU needed a direct-to-merchant path into financing that didn't depend on a broker's manual review to catch errors. That meant owning identity verification, real-time credit decisioning, bank connectivity, and lead routing in a single flow — fast enough that merchants wouldn't abandon it, and reliable enough that Compliance would sign off.",
+      "IOU needed a direct-to-merchant path into financing that didn't depend on a broker catching application errors. That meant owning identity verification, real-time credit decisioning, bank connectivity, and lead routing in a single flow: fast enough that merchants wouldn't abandon it, reliable enough that Compliance would sign off.",
     approach: [
       "Owned the full product lifecycle from discovery through iteration, defining the application flow, decisioning logic, and phased launch plan.",
       "Architected integrations with Lendflow, Plaid, Salesforce, and Baselayer to enable automated credit decisioning, bank connection, real-time lead sync, and deduplication.",
@@ -39,7 +39,7 @@ const projects = [
     period: "IOU Financial · 2021 – 2024",
     tags: ["Fintech", "Compliance", "0→1", "Multi-tenant"],
     challenge:
-      "IOU had no dedicated platform for its broker network — brokers needed a reliable way to submit and track loan applications, while IOU needed state-specific disclosure compliance and protection against duplicate submissions across a fast-growing broker base.",
+      "IOU had no dedicated platform for its broker network. Brokers needed a reliable way to submit and track loan applications; IOU needed state-specific disclosure compliance and protection against duplicate submissions across a fast-growing broker base.",
     approach: [
       "Built the loan submission platform from the ground up, now serving 1,000+ brokers.",
       "Designed and shipped a loan calculator so brokers could scope deals before submitting.",
@@ -63,7 +63,7 @@ const projects = [
     period: "IOU Financial · 2024 – 2025",
     tags: ["Internal Tools", "Automation", "Document Parsing"],
     challenge:
-      "Account Executives were processing loan submissions that arrived by email — a slow, manual, error-prone path that didn't scale as submission volume grew and pulled AEs away from higher-value work.",
+      "Account Executives were processing loan submissions that arrived by email. Slow, manual, and error-prone: the volume was growing and it was pulling AEs away from higher-value work.",
     approach: [
       "Led the AE Workstation from concept through delivery as an internal intake engine automating email-based loan submissions via Heron.",
       "Designed document parsing logic to extract structured data from incoming submissions.",
@@ -85,7 +85,7 @@ const projects = [
     period: "Radiology Partners · 2018 – 2021",
     tags: ["Healthcare", "AI/ML", "Integration", "Change Management"],
     challenge:
-      "Radiologists needed faster triage for critical findings. Leadership wanted to pilot an AI-powered diagnostic tool (AIDoc) but had no established process for integrating with existing PACS, EHR, and speech recognition systems — or for driving clinical adoption.",
+      "Radiologists needed faster triage for critical findings. Leadership wanted to pilot an AI-powered diagnostic tool (AIDoc) but had no established process for integrating with PACS, EHR, and speech recognition systems, or for driving clinical adoption.",
     approach: [
       "Led the end-to-end POC: coordinated cross-functional stakeholders across clinical, IT, and operations to define success criteria and integration requirements.",
       "Managed integrations with PACS, EHR, and speech recognition systems to fit AIDoc into existing radiologist workflows without requiring behavior change.",
@@ -127,14 +127,14 @@ const highlights = [
     id: "referral-partner-management",
     title: "Referral Partner Management",
     description:
-      "Full admin epic for IOU's referral channel — partner CRUD, auto-generated partner codes, Salesforce push, and commission tracking, giving IOU a scalable system for partner-driven growth.",
+      "Full admin epic for IOU's referral channel: partner CRUD, auto-generated partner codes, Salesforce sync, and commission tracking. Gave IOU a system for partner-driven growth that could actually scale.",
     tools: ["Salesforce", "Admin Tooling", "Commission Tracking"],
   },
   {
     id: "sofi-lantern",
     title: "SoFi Lantern Integration",
     description:
-      "Secure URL redirection for SoFi leads into IOU's application flow, with SFTP file delivery and draft-save behavior so partial applications aren't lost mid-journey.",
+      "Secure URL redirection for SoFi leads into IOU's application flow, with SFTP file delivery and draft-save so partial applications aren't lost.",
     tools: ["SFTP", "Partner Integration", "Lead Routing"],
   },
   {
@@ -169,7 +169,7 @@ export default function Projects() {
           </Reveal>
           <Reveal delay={200}>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft">
-              From discovery through delivery and iteration — across fintech, healthcare, and internal tooling.
+              Discovery through delivery and iteration, across fintech, healthcare, and internal tooling.
             </p>
           </Reveal>
         </div>

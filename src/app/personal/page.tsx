@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Get to Know Me | Breanna Burns",
-  description: "Beyond the resume — personality type, family life, and what makes me tick.",
+  description: "Beyond the resume: personality type, family life, and what makes me tick.",
 };
 
 const dimensions = [
@@ -34,7 +34,7 @@ export default function Personal() {
               Get to Know Me
             </h1>
             <p className="mt-4 text-lg text-ink-soft max-w-xl leading-8">
-              Work is a big part of who I am — but it&apos;s not all of it.
+              Work is a big part of who I am, but it&apos;s not all of it.
               Here&apos;s a little more of the full picture.
             </p>
           </Reveal>
@@ -66,7 +66,7 @@ export default function Personal() {
             </h2>
 
             <p className="text-ink-soft leading-8 text-lg">
-              I&apos;m an ENFP — or as 16personalities describes it,{" "}
+              I&apos;m an ENFP, or as 16personalities describes it:{" "}
               <span className="text-ink font-medium">
                 &ldquo;an enthusiastic, creative, and sociable free spirit who can always find a reason to smile.&rdquo;
               </span>{" "}
@@ -74,14 +74,14 @@ export default function Personal() {
             </p>
 
             <p className="mt-4 text-ink-soft leading-8">
-              ENFPs see everything as interconnected — people, ideas, problems, possibilities. I&apos;m the
+              ENFPs see everything as interconnected: people, ideas, problems, possibilities. I&apos;m the
               person who starts a conversation about onboarding drop-off and ends up connecting it to
               behavioral economics and a book I read two years ago. It can be a lot, but it&apos;s also
               where my best product thinking comes from.
             </p>
 
             <p className="mt-4 text-ink-soft leading-8">
-              I lead with empathy, which shows up most in discovery — I genuinely want to understand
+              I lead with empathy, which shows up most in discovery. I genuinely want to understand
               <em className="not-italic text-ink"> why</em> a user did what they did, not just what they
               did. And I get energized by the early, messy part of a problem before the solution is obvious:
               the brainstorm, the stakeholder alignment, the moment when scattered signals start to form a pattern.
@@ -128,7 +128,7 @@ export default function Personal() {
             </h2>
 
             <p className="text-ink-soft leading-8 text-lg">
-              I&apos;m married, and home is where the chaos lives — in the best way. We have a son named
+              I&apos;m married, and home is where the chaos lives, in the best way. We have a son named
               Leo and two dogs who have firmly decided they run the household.
             </p>
 

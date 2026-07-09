@@ -5,27 +5,27 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 const skills = [
   {
     name: "Onboarding & Activation Funnels",
-    description: "End-to-end funnel design, drop-off analysis, and iterative improvement",
+    description: "Full-funnel design, drop-off analysis, and iteration until the numbers move",
   },
   {
     name: "Funnel Analysis & Opportunity Sizing",
-    description: "Quantifying drop-offs to prioritize highest-impact fixes",
+    description: "Quantifying drop-offs to prioritize the highest-impact fixes first",
   },
   {
     name: "Journey Mapping",
-    description: "Translating user journeys into clear product narratives and phased plans",
+    description: "Mapping user journeys into clear product narratives and phased launch plans",
   },
   {
     name: "AI Agent Development",
-    description: "Building agents for feedback synthesis, PRD generation, sprint planning, and outbound sales — using the Anthropic SDK",
+    description: "Building agents for feedback synthesis, PRD generation, sprint planning, and outbound sales using the Anthropic SDK",
   },
   {
     name: "Cross-functional Leadership",
-    description: "Partnering with Engineering, Design, Ops, and Compliance",
+    description: "Day-to-day partner to Engineering, Design, Ops, and Compliance",
   },
   {
     name: "Vendor & API Integrations",
-    description: "Third-party platform integrations to automate intake and onboarding",
+    description: "Third-party integrations to automate intake, onboarding, and decisioning",
   },
 ];
 
@@ -64,10 +64,9 @@ export default function Home() {
           </Reveal>
           <Reveal delay={200}>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft">
-              10+ years turning onboarding data into shipped improvements. I lead platform builds
-              end-to-end — from journey maps and PRDs through funnel analysis, FullStory replay, and
-              reliable lifecycle workflows — for teams that can&apos;t afford to get compliance or
-              trust wrong.
+              10+ years building onboarding funnels and shipping what the data surfaces. I own platform
+              builds from journey maps and PRDs through funnel analysis, FullStory replay, and lifecycle
+              workflows, for teams where compliance and trust aren&apos;t optional.
             </p>
           </Reveal>
           <Reveal delay={300}>
@@ -111,8 +110,8 @@ export default function Home() {
         <Reveal className="max-w-2xl mb-16">
           <h2 className="font-heading font-bold text-4xl tracking-tight text-ink mb-5">Core competencies</h2>
           <p className="text-ink-soft leading-7">
-            Specialized in fintech onboarding, funnel optimization, and AI-enabled automation —
-            backed by direct partnership with engineering, design, ops, and compliance.
+            Fintech onboarding, funnel optimization, and AI-enabled automation. I work directly with
+            Engineering, Design, Ops, and Compliance, not just adjacent to them.
           </p>
         </Reveal>
         <div className="grid grid-cols-1 gap-px bg-line sm:grid-cols-2 lg:grid-cols-3 border border-line">
@@ -133,7 +132,7 @@ export default function Home() {
         <Reveal className="rounded-2xl border border-line bg-paper px-8 py-16 text-center sm:px-16">
           <h2 className="font-heading font-bold text-4xl tracking-tight text-ink">Want to see the work?</h2>
           <p className="mt-5 text-ink-soft max-w-md mx-auto leading-7">
-            Dive into detailed case studies from IOU Financial, Radiology Partners, and Buckeye Health Plan.
+            Detailed case studies from IOU Financial, Radiology Partners, and Buckeye Health Plan.
           </p>
           <div className="mt-10 flex justify-center gap-x-4">
             <Link
