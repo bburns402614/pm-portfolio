@@ -146,10 +146,10 @@ export default function Personal() {
 
             <div className="mt-10 grid grid-cols-2 gap-3">
               {[
+                { src: "/personal/family.png", caption: "The crew", alt: "Family" },
                 { src: "/personal/leo.jpg", caption: "Leo", alt: "Leo" },
                 { src: "/personal/dogs.jpg", caption: "The bosses", alt: "Our dogs" },
                 { src: "/personal/ceramics.jpg", caption: "Ceramics", alt: "Ceramics work" },
-                { src: "/personal/home.jpg", caption: "Columbus life", alt: "Home and garden" },
               ].map((photo) => (
                 <div
                   key={photo.alt}
