@@ -144,21 +144,28 @@ export default function Personal() {
               and two dogs at the same time, which is more of a research project than it sounds.
             </p>
 
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="mt-10 grid grid-cols-2 gap-3">
               {[
-                { label: "Partner", value: "Married" },
-                { label: "Son", value: "Leo" },
-                { label: "Dogs", value: "Two (they're in charge)" },
-                { label: "Hobby", value: "Ceramics" },
-              ].map((item) => (
+                { src: "/personal/leo.jpg", caption: "Leo", alt: "Leo" },
+                { src: "/personal/dogs.jpg", caption: "The bosses", alt: "Our dogs" },
+                { src: "/personal/ceramics.jpg", caption: "Ceramics", alt: "Ceramics work" },
+                { src: "/personal/home.jpg", caption: "Columbus life", alt: "Home and garden" },
+              ].map((photo) => (
                 <div
-                  key={item.label}
-                  className="rounded-xl border border-line bg-paper px-5 py-4"
+                  key={photo.alt}
+                  className="group relative overflow-hidden rounded-2xl bg-muted"
+                  style={{ aspectRatio: "1" }}
                 >
-                  <p className="text-xs font-semibold tracking-widest uppercase text-ink-faint mb-1">
-                    {item.label}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <p className="absolute bottom-3 left-3 text-xs font-semibold tracking-wide text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {photo.caption}
                   </p>
-                  <p className="text-base font-medium text-ink">{item.value}</p>
                 </div>
               ))}
             </div>
