@@ -162,8 +162,8 @@ export default function Personal() {
                     alt={photo.alt}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <p className="absolute bottom-3 left-3 text-xs font-semibold tracking-wide text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
+                  <p className="absolute bottom-3 left-3 text-xs font-semibold tracking-wide text-white">
                     {photo.caption}
                   </p>
                 </div>
