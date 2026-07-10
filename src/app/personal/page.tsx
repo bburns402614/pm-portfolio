@@ -148,7 +148,7 @@ export default function Personal() {
               {[
                 { src: "/personal/family2.jpg", caption: "The crew", alt: "Family" },
                 { src: "/personal/leo.jpg", caption: "Leo", alt: "Leo" },
-                { src: "/personal/dogs.jpg", caption: "The bosses", alt: "Our dogs" },
+                { src: "/personal/dogs.jpg", caption: "The dogs", alt: "Our dogs" },
                 { src: "/personal/ceramics.jpg", caption: "Ceramics", alt: "Ceramics work" },
               ].map((photo) => (
                 <div
