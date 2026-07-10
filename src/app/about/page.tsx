@@ -86,7 +86,7 @@ export default function About() {
           <p className="text-xs font-semibold tracking-widest uppercase text-ink-faint">Resume</p>
           <DownloadResumeButton />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+        <div id="resume-content" className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
           {/* Sidebar */}
           <Reveal as="aside" className="lg:sticky lg:top-28 lg:self-start">
             <div className="relative w-full max-w-[15rem] print:hidden">
