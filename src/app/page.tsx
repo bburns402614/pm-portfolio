@@ -17,7 +17,7 @@ const skills = [
   },
   {
     name: "AI Agent Development",
-    description: "Building agents for feedback synthesis, PRD generation, sprint planning, and outbound sales using the Anthropic SDK",
+    description: "Designed and deployed a 6-agent pipeline: feedback synthesis, PRD generation, sprint planning, and outbound prospecting. Built on the Anthropic SDK with MCP server integrations.",
   },
   {
     name: "Cross-functional Leadership",
@@ -32,7 +32,7 @@ const skills = [
 const highlights = [
   { stat: "10+", label: "Years of PM experience" },
   { stat: "8,000+", label: "Applications processed by Direct App" },
-  { stat: "1,000+", label: "Brokers served by Broker Portal" },
+  { stat: "70%", label: "Credentialing turnaround reduction" },
   { stat: "40%", label: "Reduction in manual intervention" },
 ];
 
@@ -67,6 +67,9 @@ export default function Home() {
               10+ years building products in healthcare and fintech, where compliance and trust aren&apos;t
               optional. I own platform builds from journey maps and PRDs through funnel analysis, FullStory
               replay, and lifecycle workflows, for teams where getting it wrong has real consequences.
+            </p>
+            <p className="mt-4 text-sm font-semibold text-accent tracking-tight">
+              Also building: a 6-agent AI pipeline for outbound prospecting, running on the Anthropic SDK with MCP integrations.
             </p>
           </Reveal>
           <Reveal delay={300}>

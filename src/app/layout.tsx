@@ -50,7 +50,7 @@ export default function RootLayout({
                 <div>
                   <span className="font-heading font-bold text-2xl tracking-tight">Breanna Burns</span>
                   <p className="mt-3 text-sm text-white/50 max-w-xs leading-6">
-                    Product Manager building reliable, well-measured onboarding experiences in fintech.
+                    Product Manager with 10+ years in healthcare and fintech, building platforms where getting it wrong has real consequences.
                   </p>
                 </div>
                 <div>

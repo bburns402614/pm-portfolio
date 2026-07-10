@@ -89,13 +89,14 @@ const projects = [
     approach: [
       "Led the end-to-end POC: coordinated cross-functional stakeholders across clinical, IT, and operations to define success criteria and integration requirements.",
       "Managed integrations with PACS, EHR, and speech recognition systems to fit AIDoc into existing radiologist workflows without requiring behavior change.",
-      "Structured the pilot to generate clear, measurable outcomes that could justify a broader rollout decision.",
-      "Supported clinical teams through adoption, capturing feedback to refine workflows iteratively.",
+      "Defined the metrics framework for the pilot: what success looked like, how it would be measured, and the threshold that would trigger a national rollout decision.",
+      "Supported clinical teams through adoption, capturing structured feedback sprint over sprint to refine workflows before scale.",
+      "Documented integration specs and workflow changes to support rollout replication across new sites as the program expanded nationally.",
     ],
     outcomes: [
-      { stat: "Nationwide", label: "expansion following successful pilot" },
-      { stat: "Multi-system", label: "PACS/EHR/speech recognition integration delivered" },
-      { stat: "Clinical adoption", label: "achieved across technical and clinical teams" },
+      { stat: "Nationwide", label: "rollout following a structured, measurable pilot" },
+      { stat: "3 systems", label: "PACS, EHR, and speech recognition integrated without workflow disruption" },
+      { stat: "Clinical adoption", label: "achieved across technical and clinical teams at scale" },
     ],
     tools: ["PACS", "EHR", "AIDoc", "Stakeholder Coordination"],
   },
@@ -109,9 +110,11 @@ const projects = [
     challenge:
       "Provider credentialing was a slow, manual process creating backlogs, compliance risk, and downstream claims denials. Turnaround times were unacceptably long and the process lacked clear ownership across departments.",
     approach: [
-      "Led cross-department initiative to map and redesign the credentialing workflow end-to-end.",
-      "Identified bottlenecks driving turnaround delays and worked with stakeholders to eliminate handoff friction.",
-      "Introduced process controls that improved accuracy and reduced the volume of claims denials tied to credentialing errors.",
+      "Led a cross-department initiative to map the credentialing workflow end-to-end: every handoff, every delay, every place accountability was unclear.",
+      "Identified the specific bottlenecks driving turnaround delays and worked directly with stakeholders to eliminate handoff friction rather than route around it.",
+      "Defined ownership at each step so no application sat in limbo waiting for an unclear owner.",
+      "Introduced process controls that caught credentialing errors before they reached claims, reducing downstream denials.",
+      "Built a stage-level tracking mechanism to make turnaround time visible for the first time, which is what made the 70% improvement measurable.",
     ],
     outcomes: [
       { stat: "70%", label: "reduction in credentialing turnaround time" },
