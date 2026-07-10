@@ -53,7 +53,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-5xl px-6 pt-28 pb-24 sm:pt-36 sm:pb-32 lg:px-8">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-ink-soft">
-              Fintech &amp; Customer-Facing Products · Columbus, OH
+              Healthcare &amp; Fintech · Regulated, High-Trust Products
             </span>
           </Reveal>
           <Reveal delay={100}>
@@ -64,9 +64,9 @@ export default function Home() {
           </Reveal>
           <Reveal delay={200}>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-ink-soft">
-              10+ years building onboarding funnels and shipping what the data surfaces. I own platform
-              builds from journey maps and PRDs through funnel analysis, FullStory replay, and lifecycle
-              workflows, for teams where compliance and trust aren&apos;t optional.
+              10+ years building products in healthcare and fintech, where compliance and trust aren&apos;t
+              optional. I own platform builds from journey maps and PRDs through funnel analysis, FullStory
+              replay, and lifecycle workflows, for teams where getting it wrong has real consequences.
             </p>
           </Reveal>
           <Reveal delay={300}>
