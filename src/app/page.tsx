@@ -53,7 +53,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-5xl px-6 pt-28 pb-24 sm:pt-36 sm:pb-32 lg:px-8">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-ink-soft">
-              Fintech &amp; Regulated Consumer Products · Columbus, OH
+              Fintech &amp; Customer-Facing Products · Columbus, OH
             </span>
           </Reveal>
           <Reveal delay={100}>

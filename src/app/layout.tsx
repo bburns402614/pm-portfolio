@@ -76,7 +76,7 @@ export default function RootLayout({
                 <p className="text-sm text-white/40">
                   © {new Date().getFullYear()} Breanna Burns. All rights reserved.
                 </p>
-                <p className="text-sm text-white/40">Product Manager · Fintech &amp; Regulated Consumer Products</p>
+                <p className="text-sm text-white/40">Product Manager · Fintech &amp; Customer-Facing Products</p>
               </div>
             </div>
           </footer>

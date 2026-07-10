@@ -120,7 +120,7 @@ export default function About() {
           <div>
             <Reveal>
               <p className="text-lg leading-8 text-ink-soft max-w-2xl">
-                Product Manager with 10+ years in fintech and regulated consumer products. I&apos;ve
+                Product Manager with 10+ years in fintech and customer-facing products. I&apos;ve
                 led three platform builds from scratch: Broker Portal, AE Workstation, and Direct
                 Merchant Application. Funnel analysis and FullStory session replay are how I find
                 friction. Shipped improvements are how I close it.
