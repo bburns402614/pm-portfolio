@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import Logo from "@/components/Logo";
+import DownloadResumeButton from "@/components/DownloadResumeButton";
+
+export const metadata: Metadata = {
+  title: "My Background | Breanna Burns",
+  description: "Resume and background for Breanna Burns, Product Manager with 10+ years in healthcare and fintech.",
+};
 
 const experience = [
   {
@@ -75,10 +82,14 @@ export default function About() {
   return (
     <div className="bg-background">
       <div className="mx-auto max-w-6xl px-6 lg:px-8 py-20">
+        <div className="mb-8 flex items-center justify-between print:hidden">
+          <p className="text-xs font-semibold tracking-widest uppercase text-ink-faint">Resume</p>
+          <DownloadResumeButton />
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
           {/* Sidebar */}
           <Reveal as="aside" className="lg:sticky lg:top-28 lg:self-start">
-            <div className="relative w-full max-w-[15rem]">
+            <div className="relative w-full max-w-[15rem] print:hidden">
               <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-gradient-to-br from-accent to-violet-600" />
               <div aria-hidden="true" className="absolute -left-2 -bottom-2 z-[2] flex h-12 w-12 items-center justify-center rounded-full bg-ink text-white">
                 <Logo className="h-6 w-6 text-white" />
