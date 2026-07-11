@@ -605,6 +605,86 @@ function Block({ block }: { block: PreviewBlock }) {
   }
 }
 
+type CategoryMeta = (typeof categoryMeta)[Category];
+
+const LINE_WIDTHS = [88, 65, 92, 70, 82, 58, 76, 94, 60, 84];
+function lw(i: number) { return LINE_WIDTHS[i % LINE_WIDTHS.length]; }
+
+function ThumbnailPreview({ artifact, meta }: { artifact: Artifact; meta: CategoryMeta }) {
+  const block = artifact.preview[0];
+  return (
+    <div className="absolute inset-0 p-4 flex flex-col gap-2.5 overflow-hidden" aria-hidden="true">
+      {/* Header stripe */}
+      <div className={`h-5 w-full rounded-sm ${meta.activeBg} opacity-75`} />
+
+      {block.type === "table" && (
+        <div className="flex flex-col gap-1 mt-0.5">
+          <div className="flex gap-1">
+            {Array.from({ length: Math.min(block.headers.length, 4) }).map((_, j) => (
+              <div key={j} className={`h-3 flex-1 rounded-sm ${meta.bg} opacity-90`} />
+            ))}
+          </div>
+          {Array.from({ length: Math.min(block.rows.length, 5) }).map((_, ri) => (
+            <div key={ri} className="flex gap-1">
+              {Array.from({ length: Math.min(block.headers.length, 4) }).map((_, ci) => (
+                <div key={ci} className={`h-2.5 flex-1 rounded-sm ${ri % 2 === 0 ? "bg-line" : "bg-muted/60"}`}
+                  style={{ opacity: 0.4 + 0.6 * (1 - ri / 6) }} />
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {block.type === "fields" && (
+        <div className="flex flex-col gap-1.5 mt-0.5">
+          {block.items.slice(0, 5).map((_, i) => (
+            <div key={i} className="flex gap-2 items-center">
+              <div className={`h-2.5 w-12 rounded-sm ${meta.bg} shrink-0`} />
+              <div className="h-2.5 rounded-sm bg-line" style={{ width: `${lw(i)}%` }} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {block.type === "checklist" && (
+        <div className="flex flex-col gap-1.5 mt-0.5">
+          {block.items.slice(0, 6).map((item, i) => (
+            <div key={i} className="flex gap-2 items-center">
+              <div className={`h-3.5 w-3.5 rounded-sm shrink-0 flex items-center justify-center ${item.done ? meta.activeBg : "bg-paper border border-line"}`}>
+                {item.done && <div className="h-1.5 w-1.5 rounded-sm bg-white" />}
+              </div>
+              <div className="h-2.5 rounded-sm bg-line" style={{ width: `${lw(i + 2)}%` }} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {block.type === "bullets" && (
+        <div className="flex flex-col gap-1.5 mt-0.5">
+          {block.items.slice(0, 5).map((_, i) => (
+            <div key={i} className="flex gap-2 items-center">
+              <div className={`h-2 w-2 rounded-full shrink-0 ${meta.activeBg} opacity-70`} />
+              <div className="h-2.5 rounded-sm bg-line" style={{ width: `${lw(i + 1)}%` }} />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {block.type === "section" && (
+        <div className="flex flex-col gap-1.5 mt-0.5">
+          <div className={`h-3 w-1/2 rounded-sm ${meta.bg}`} />
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="h-2.5 rounded-sm bg-line" style={{ width: `${lw(i + 3)}%` }} />
+          ))}
+        </div>
+      )}
+
+      {/* Bottom fade so thumbnail doesn't hard-clip */}
+      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-paper/80 to-transparent pointer-events-none" />
+    </div>
+  );
+}
+
 export default function ArtifactsGrid() {
   const [active, setActive] = useState<Category | null>(null);
   const [selected, setSelected] = useState<Artifact | null>(null);
@@ -670,48 +750,28 @@ export default function ArtifactsGrid() {
                 type="button"
                 delay={(i % 6) * 60}
                 onClick={() => setSelected(artifact)}
-                aria-label={`Preview ${artifact.title} template`}
-                className="group w-full text-left flex flex-col rounded-xl border border-line bg-paper p-6 hover:border-accent/30 hover:shadow-md hover:-translate-y-1 transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                aria-label={`Open ${artifact.title}`}
+                className="group w-full text-left flex flex-col rounded-xl border border-line bg-paper overflow-hidden hover:border-accent/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
               >
-                <span
-                  className={`self-start inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold tracking-wide ${meta.color} ${meta.bg} ${meta.border}`}
-                >
-                  {artifact.category}
-                </span>
-
-                <h3 className="mt-4 font-heading font-semibold text-ink leading-snug">
-                  {artifact.title}
-                </h3>
-
-                <p className="mt-2 text-sm text-ink-soft leading-6 flex-grow">
-                  {artifact.description}
-                </p>
-
-                <div className="mt-5 pt-4 border-t border-line">
-                  <p className="text-[11px] font-semibold tracking-widest uppercase text-ink-faint mb-2">
-                    Used in
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {artifact.usedIn.map((project) => (
-                      <span
-                        key={project}
-                        className={`rounded-md px-2 py-0.5 text-[11px] font-medium ${
-                          project === "In Progress"
-                            ? "bg-amber-50 text-amber-700 border border-amber-200"
-                            : "bg-muted text-ink-soft"
-                        }`}
-                      >
-                        {project}
-                      </span>
-                    ))}
+                {/* Thumbnail */}
+                <div className="relative overflow-hidden bg-paper" style={{ aspectRatio: "4/3" }}>
+                  <ThumbnailPreview artifact={artifact} meta={meta} />
+                  <span className={`absolute top-3 left-3 inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold tracking-wide ${meta.color} ${meta.bg} ${meta.border}`}>
+                    {artifact.category}
+                  </span>
+                  <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 transition-colors duration-200" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-ink shadow-lg border border-line">
+                      View →
+                    </span>
                   </div>
                 </div>
 
-                <div className="mt-3 flex items-center gap-1 text-[11px] font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-150">
-                  <span>Preview template</span>
-                  <svg className="h-3 w-3" viewBox="0 0 12 12" fill="none">
-                    <path d="M2.5 6h7m-3-3 3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                {/* Title */}
+                <div className="px-5 py-4 border-t border-line">
+                  <h3 className="font-heading font-semibold text-ink leading-snug group-hover:text-accent transition-colors duration-150">
+                    {artifact.title}
+                  </h3>
                 </div>
               </Reveal>
             );
