@@ -135,7 +135,14 @@ body {
   }
 
   @page {
-    margin: 0.5in;
+    margin: 0;
     size: letter portrait;
+  }
+
+  /* Resume page: remove all chrome so only the sheet prints */
+  #resume-sheet {
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: none !important;
   }
 }
