@@ -32,6 +32,28 @@ const projects = [
     tools: ["Lendflow", "Plaid", "Salesforce", "Baselayer", "Experian", "FullStory", "Claude AI"],
   },
   {
+    id: "ae-workstation",
+    company: "IOU Financial",
+    initials: "AE",
+    title: "AE Workstation: Automating Email-Based Loan Intake",
+    period: "IOU Financial · 2024 – 2025",
+    tags: ["Internal Tools", "Automation", "Document Parsing"],
+    challenge:
+      "Account Executives were processing loan submissions that arrived by email. Slow, manual, and error-prone: the volume was growing and it was pulling AEs away from higher-value work.",
+    approach: [
+      "Led the AE Workstation from concept through delivery as an internal intake engine automating email-based loan submissions via Heron.",
+      "Designed document parsing logic to extract structured data from incoming submissions.",
+      "Built validation rules and exception-handling logic to catch issues before they reached an AE's queue.",
+      "Iterated on the exception-handling logic using real intake volume to keep tightening accuracy.",
+    ],
+    outcomes: [
+      { stat: "40%", label: "reduction in manual intervention" },
+      { stat: "Concept → delivery", label: "led end-to-end as sole product owner" },
+      { stat: "Faster intake", label: "consistent, structured loan submission pipeline" },
+    ],
+    tools: ["Heron", "Document Parsing", "Validation Rules", "Exception Handling"],
+  },
+  {
     id: "broker-portal",
     company: "IOU Financial",
     initials: "BP",
@@ -54,28 +76,6 @@ const projects = [
       { stat: "0 → 1", label: "platform built from the ground up" },
     ],
     tools: ["Salesforce", "FullStory", "Atlassian", "Compliance Workflows"],
-  },
-  {
-    id: "ae-workstation",
-    company: "IOU Financial",
-    initials: "AE",
-    title: "AE Workstation: Automating Email-Based Loan Intake",
-    period: "IOU Financial · 2024 – 2025",
-    tags: ["Internal Tools", "Automation", "Document Parsing"],
-    challenge:
-      "Account Executives were processing loan submissions that arrived by email. Slow, manual, and error-prone: the volume was growing and it was pulling AEs away from higher-value work.",
-    approach: [
-      "Led the AE Workstation from concept through delivery as an internal intake engine automating email-based loan submissions via Heron.",
-      "Designed document parsing logic to extract structured data from incoming submissions.",
-      "Built validation rules and exception-handling logic to catch issues before they reached an AE's queue.",
-      "Iterated on the exception-handling logic using real intake volume to keep tightening accuracy.",
-    ],
-    outcomes: [
-      { stat: "40%", label: "reduction in manual intervention" },
-      { stat: "Concept → delivery", label: "led end-to-end as sole product owner" },
-      { stat: "Faster intake", label: "consistent, structured loan submission pipeline" },
-    ],
-    tools: ["Heron", "Document Parsing", "Validation Rules", "Exception Handling"],
   },
   {
     id: "radiology-partners-aidoc",
