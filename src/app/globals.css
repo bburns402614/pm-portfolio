@@ -108,12 +108,15 @@ body {
 }
 
 @media print {
-  nav,
-  footer {
-    display: none !important;
+  /* Preserve all colors, backgrounds, and borders exactly as on screen */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  /* Reveal components start at opacity:0 — force visible for print */
+  /* Reveal components use inline opacity:0/transform before intersection — override */
   * {
     opacity: 1 !important;
     transform: none !important;
@@ -121,21 +124,9 @@ body {
     transition: none !important;
   }
 
-  body {
-    background: white !important;
-    color: #18181b !important;
-  }
-
-  .bg-background,
-  .bg-paper,
-  .bg-muted,
-  .bg-grain {
-    background: white !important;
-  }
-
-  /* Remove accent-soft backgrounds so chips print cleanly */
-  .bg-accent-soft {
-    background: #eff6ff !important;
+  nav,
+  footer {
+    display: none !important;
   }
 
   a {
@@ -144,6 +135,7 @@ body {
   }
 
   @page {
-    margin: 0.75in;
+    margin: 0.5in;
+    size: letter portrait;
   }
 }
