@@ -131,10 +131,10 @@ export default function About() {
           <div>
             <Reveal>
               <p className="text-lg leading-8 text-ink-soft max-w-2xl">
-                Product Manager with 10+ years in fintech and customer-facing products. I&apos;ve
-                led three platform builds from scratch: Broker Portal, AE Workstation, and Direct
-                Merchant Application. Funnel analysis and FullStory session replay are how I find
-                friction. Shipped improvements are how I close it.
+                Product Manager with 10+ years across healthcare and fintech. I&apos;ve led platform
+                builds from scratch, including Broker Portal, AE Workstation, and Direct Merchant
+                Application in fintech, and a credentialing process overhaul and an AI diagnostic
+                tool rollout in healthcare.
               </p>
               <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
                 I work closely with Engineering, Design, Ops, and Compliance as a day-to-day partner.
@@ -169,7 +169,7 @@ export default function About() {
                     <ul className="space-y-2">
                       {job.bullets.map((b, i) => (
                         <li key={i} className="flex gap-3 text-ink-soft text-sm leading-6">
-                          <span className="text-accent mt-0.5 shrink-0">—</span>
+                          <span className="text-accent mt-0.5 shrink-0">·</span>
                           {b}
                         </li>
                       ))}

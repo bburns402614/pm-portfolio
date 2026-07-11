@@ -36,7 +36,7 @@ const projects = [
     company: "IOU Financial",
     initials: "BP",
     title: "Broker Portal: Built From the Ground Up",
-    period: "IOU Financial · 2021 – 2024",
+    period: "IOU Financial · 2022 – 2024",
     tags: ["Fintech", "Compliance", "0→1", "Multi-tenant"],
     challenge:
       "IOU had no dedicated platform for its broker network. Brokers needed a reliable way to submit and track loan applications; IOU needed state-specific disclosure compliance and protection against duplicate submissions across a fast-growing broker base.",

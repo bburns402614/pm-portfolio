@@ -3,7 +3,7 @@ import ArtifactsGrid from "@/components/ArtifactsGrid";
 
 export const metadata: Metadata = {
   title: "PM Artifacts | Breanna Burns",
-  description: "Frameworks, templates, and tools Breanna Burns builds and reaches for across fintech product work.",
+  description: "Frameworks, templates, and tools Breanna Burns builds and reaches for across healthcare and fintech product work.",
 };
 
 export default function ArtifactsPage() {

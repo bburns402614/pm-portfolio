@@ -84,7 +84,7 @@ export default function Home() {
                 href="/about"
                 className="cursor-pointer group flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-accent transition-colors duration-200"
               >
-                About Me
+                My Background
                 <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
               </Link>
             </div>
@@ -133,7 +133,7 @@ export default function Home() {
       {/* CTA */}
       <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-28">
         <Reveal className="rounded-2xl border border-line bg-paper px-8 py-16 text-center sm:px-16">
-          <h2 className="font-heading font-bold text-4xl tracking-tight text-ink">Want to see the work?</h2>
+          <h2 className="font-heading font-bold text-4xl tracking-tight text-ink">Want to see the case studies?</h2>
           <p className="mt-5 text-ink-soft max-w-md mx-auto leading-7">
             Detailed case studies from IOU Financial, Radiology Partners, and Buckeye Health Plan.
           </p>
@@ -142,7 +142,7 @@ export default function Home() {
               href="/projects"
               className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-accent hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
-              Projects
+              Case Studies
             </Link>
             <Link
               href="/about"
