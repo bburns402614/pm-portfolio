@@ -17,7 +17,7 @@ const skills = [
   },
   {
     name: "AI Agent Development",
-    description: "Designed and deployed a 6-agent pipeline: feedback synthesis, PRD generation, sprint planning, and outbound prospecting. Built on the Anthropic SDK with MCP server integrations.",
+    description: "Designed and deployed a six-agent Claude Code pipeline (intake, planning, build, review, deploy, UI/UX QA) with MCP integrations that ships full-stack builds from plain-English specs.",
   },
   {
     name: "Cross-functional Leadership",
@@ -53,7 +53,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-5xl px-6 pt-28 pb-24 sm:pt-36 sm:pb-32 lg:px-8">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-1.5 text-xs font-medium tracking-widest uppercase text-ink-soft">
-              Healthcare &amp; Fintech · Regulated, High-Trust Products
+              Healthcare &amp; Fintech · Regulated, High-Trust Products · Columbus, OH
             </span>
           </Reveal>
           <Reveal delay={100}>
@@ -113,7 +113,7 @@ export default function Home() {
         <Reveal className="max-w-2xl mb-16">
           <h2 className="font-heading font-bold text-4xl tracking-tight text-ink mb-5">Core competencies</h2>
           <p className="text-ink-soft leading-7">
-            Fintech onboarding, funnel optimization, and AI-enabled automation. I work directly with
+            Onboarding and workflow automation across healthcare and fintech, plus AI-enabled building. I work directly with
             Engineering, Design, Ops, and Compliance, not just adjacent to them.
           </p>
         </Reveal>
