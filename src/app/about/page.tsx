@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
-import Logo from "@/components/Logo";
+
 import DownloadResumeButton from "@/components/DownloadResumeButton";
 
 export const metadata: Metadata = {
@@ -90,14 +90,12 @@ export default function About() {
           {/* Sidebar */}
           <Reveal as="aside" className="lg:sticky lg:top-28 lg:self-start">
             <div className="relative w-full max-w-[15rem] print:hidden">
-              <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-gradient-to-br from-accent to-violet-600" />
-              <div aria-hidden="true" className="absolute -left-2 -bottom-2 z-[2] flex h-12 w-12 items-center justify-center rounded-full bg-ink text-white">
-                <Logo className="h-6 w-6 text-white" />
-              </div>
-              <div className="group relative overflow-hidden rounded-2xl bg-muted shadow-[0_10px_30px_-12px_rgba(37,99,235,0.35)]" style={{ aspectRatio: "1086 / 1448" }}>
+              <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-none bg-accent" />
+
+              <div className="group relative overflow-hidden rounded-2xl bg-muted" style={{ aspectRatio: "1086 / 1448" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/portrait.png" alt="Breanna Burns, Product Manager" className="block h-full w-full object-cover object-top grayscale contrast-[1.08] brightness-[1.03] transition-transform duration-700 group-hover:scale-105" />
-                <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent to-violet-600 opacity-90 mix-blend-color" />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-accent/70 to-amber-900/40 opacity-60 mix-blend-multiply" />
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/35 to-transparent" />
               </div>
             </div>
@@ -119,7 +117,7 @@ export default function About() {
               <h2 className="text-xs font-semibold tracking-widest uppercase text-ink-faint mb-4">Skills</h2>
               <div className="flex flex-wrap gap-1.5">
                 {skills.map((skill) => (
-                  <span key={skill} className="bg-accent-soft text-accent text-xs font-medium px-2.5 py-1 rounded-full transition-transform duration-150 hover:scale-105">
+                  <span key={skill} className="bg-accent-soft text-ink border border-accent/25 text-xs font-medium px-2.5 py-1 transition-transform duration-150 hover:scale-105">
                     {skill}
                   </span>
                 ))}
@@ -131,10 +129,11 @@ export default function About() {
           <div>
             <Reveal>
               <p className="text-lg leading-8 text-ink-soft max-w-2xl">
-                Product Manager with 10+ years across healthcare and fintech. I&apos;ve led platform
-                builds from scratch, including Broker Portal, AE Workstation, and Direct Merchant
-                Application in fintech, and a credentialing process overhaul and an AI diagnostic
-                tool rollout in healthcare.
+                Product Manager with 10+ years in healthcare and fintech, building regulated,
+                high-trust platforms where getting it wrong has real consequences. In healthcare,
+                I led a nationwide AIDoc rollout at Radiology Partners and a credentialing overhaul
+                at Buckeye Health Plan that cut turnaround by 70%. In fintech, I&apos;ve led the
+                Direct Merchant Application (DMA), Broker Portal, and AE Workstation at IOU Financial.
               </p>
               <p className="mt-4 text-lg leading-8 text-ink-soft max-w-2xl">
                 I work closely with Engineering, Design, Ops, and Compliance as a day-to-day partner.
