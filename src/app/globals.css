@@ -1,23 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAFAFA;
-  --foreground: #09090B;
+  --background: #F0EBE0;
+  --foreground: #2E2A25;
 
-  /* Design tokens — monochrome + blue accent (UI UX Pro Max: Portfolio/Personal) */
-  --ink: #18181B;
-  --ink-soft: #64748B;
-  --ink-faint: #A1A1AA;
+  --ink: #2E2A25;
+  --ink-soft: #6B6257;
+  --ink-faint: #A89D90;
 
-  --paper: #FFFFFF;
-  --line: #E4E4E7;
+  --paper: #FAF7F2;
+  --line: #D8D0C3;
 
-  --accent: #2563EB;
-  --accent-soft: #EFF6FF;
-  --accent-strong: #1D4ED8;
+  --accent: #4A5E3A;
+  --accent-soft: #EAF0E4;
+  --accent-strong: #3A4E2E;
 
-  --muted: #E8ECF0;
-  --muted-fg: #64748B;
+  --muted: #E8E2D6;
+  --muted-fg: #6B6257;
 }
 
 @theme inline {
@@ -38,14 +37,25 @@
   --color-muted: var(--muted);
   --color-muted-fg: var(--muted-fg);
 
-  --font-sans: var(--font-body);
   --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-sans: var(--font-body);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* Botanical plant pattern on every page wrapper — applied here so it
+   renders on top of the solid background-color set by bg-background */
+.bg-background {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 300' fill='none' stroke='rgba(74%2C94%2C58%2C0.40)' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M72 295 C70 240 68 188 66 143 C64 98 62 56 65 18' stroke-width='1.6'/%3E%3Ccircle cx='65' cy='14' r='4.5' stroke-width='1.2'/%3E%3Cellipse cx='65' cy='7' rx='2.2' ry='4.5' stroke-width='1.1'/%3E%3Cellipse cx='65' cy='7' rx='2.2' ry='4.5' transform='rotate(72 65 14)' stroke-width='1.1'/%3E%3Cellipse cx='65' cy='7' rx='2.2' ry='4.5' transform='rotate(144 65 14)' stroke-width='1.1'/%3E%3Cellipse cx='65' cy='7' rx='2.2' ry='4.5' transform='rotate(216 65 14)' stroke-width='1.1'/%3E%3Cellipse cx='65' cy='7' rx='2.2' ry='4.5' transform='rotate(288 65 14)' stroke-width='1.1'/%3E%3Cpath d='M64 42 C82 35 100 28 112 18' stroke-width='1.1'/%3E%3Cpath d='M64 42 C84 44 100 44 112 18' stroke-width='1.1'/%3E%3Cpath d='M65 70 C48 62 34 54 20 44' stroke-width='1.1'/%3E%3Cpath d='M65 70 C50 72 36 74 20 44' stroke-width='1.1'/%3E%3Cpath d='M65 97 C80 90 95 82 106 72' stroke-width='1.1'/%3E%3Ccircle cx='108' cy='69' r='3.5' stroke-width='1.1'/%3E%3Ccircle cx='116' cy='65' r='2.8' stroke-width='1.1'/%3E%3Ccircle cx='114' cy='75' r='2.2' stroke-width='1.1'/%3E%3Cpath d='M66 126 C50 118 36 112 22 102' stroke-width='1.1'/%3E%3Cpath d='M66 126 C52 130 38 134 22 102' stroke-width='1.1'/%3E%3Cpath d='M67 158 C84 150 98 146 112 136' stroke-width='1.1'/%3E%3Cpath d='M67 158 C85 162 100 166 112 136' stroke-width='1.1'/%3E%3Cpath d='M69 198 C52 190 38 184 24 174' stroke-width='1.1'/%3E%3Cpath d='M69 198 C54 204 40 208 24 174' stroke-width='1.1'/%3E%3Cpath d='M70 238 C86 230 100 225 112 215' stroke-width='1.1'/%3E%3Cpath d='M70 238 C87 244 100 248 112 215' stroke-width='1.1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 220px 472px;
 }
 
 /* Subtle grain texture used behind hero/dark sections */
@@ -54,46 +64,28 @@ body {
   background-size: 24px 24px;
 }
 
-.bg-grain-dark {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
-  background-size: 24px 24px;
+
+@keyframes vignette-pulse {
+  0%, 100% { opacity: 0.10; }
+  50% { opacity: 0.22; }
 }
 
-@keyframes float-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, -40px) scale(1.08); }
+.animate-vignette-pulse {
+  animation: vignette-pulse 8s ease-in-out infinite;
 }
 
-@keyframes float-b {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-24px, 30px) scale(1.05); }
+@keyframes grain-drift {
+  from { background-position: 0 0; }
+  to { background-position: 24px 24px; }
 }
 
-@keyframes gradient-pan {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+.animate-grain-drift {
+  animation: grain-drift 20s linear infinite;
 }
 
 @keyframes soft-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.35); }
-  70% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
-}
-
-.animate-float-a {
-  animation: float-a 10s ease-in-out infinite;
-}
-
-.animate-float-b {
-  animation: float-b 13s ease-in-out infinite;
-}
-
-.text-gradient-accent {
-  background: linear-gradient(90deg, var(--accent), #7C3AED, var(--accent));
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-pan 6s ease infinite;
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 94, 58, 0.35); }
+  70% { box-shadow: 0 0 0 8px rgba(74, 94, 58, 0); }
 }
 
 .animate-soft-pulse {
