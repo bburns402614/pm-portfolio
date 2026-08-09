@@ -171,10 +171,16 @@ export default function Home() {
             Engineering, Design, Ops, and Compliance, not just adjacent to them.
           </p>
         </Reveal>
-        <div className="grid grid-cols-1 gap-px bg-line sm:grid-cols-2 lg:grid-cols-3 border border-line">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill, i) => (
             <Reveal key={skill.name} delay={(i % 3) * 90}>
-              <div className="group bg-paper p-8 h-full transition-all duration-200">
+              <div className="group relative overflow-hidden bg-paper p-8 h-full border border-line shadow-[inset_0_0_0_4px_var(--paper),inset_0_0_0_5px_rgba(74,94,58,0.18)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[inset_0_0_0_4px_var(--paper),inset_0_0_0_5px_var(--accent),0_10px_28px_-10px_rgba(74,94,58,0.28)]">
+                <span
+                  aria-hidden="true"
+                  className="absolute top-5 right-5 select-none pointer-events-none font-heading italic font-bold text-7xl leading-none text-accent/[0.07] transition-colors duration-300 group-hover:text-accent/[0.13]"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <div className="mb-5 h-px w-6 bg-accent transition-all duration-300 group-hover:w-10" />
                 <h3 className="font-heading font-semibold text-ink">{skill.name}</h3>
                 <p className="mt-2 text-sm text-ink-soft leading-6">{skill.description}</p>
