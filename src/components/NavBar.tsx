@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import Logo from "@/components/Logo";
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "Home" },
@@ -35,8 +35,8 @@ export default function NavBar() {
       <div className="flex justify-between items-center h-14 sm:h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-ink text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
-            <Logo className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+          <span className="flex h-8 w-8 sm:h-9 sm:w-9 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-110">
+            <Image src="/logo.png" alt="Breanna Burns logo" width={36} height={36} className="h-full w-full object-cover" />
           </span>
           <span className="text-sm font-heading font-bold text-ink tracking-tight hidden sm:inline">
             Breanna Burns
