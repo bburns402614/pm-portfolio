@@ -90,7 +90,7 @@ export default function About() {
           {/* Sidebar */}
           <Reveal as="aside" className="lg:sticky lg:top-28 lg:self-start">
             <div className="relative w-full max-w-[15rem] print:hidden">
-              <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-none bg-accent" />
+              <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-accent" />
 
               <div className="group relative overflow-hidden rounded-2xl bg-muted" style={{ aspectRatio: "1122 / 1402" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
