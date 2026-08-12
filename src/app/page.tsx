@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import SectionDivider from "@/components/SectionDivider";
 
 const FUNNEL_STAGES = [
   { id: "discover", label: "DISCOVER", desc: "Lots of ideas, customer needs, data, opportunities.", pct: 26 },
@@ -161,9 +160,6 @@ export default function Home() {
 
       {/* Skills */}
       <div className="mx-auto max-w-6xl px-6 lg:px-8 pt-16 pb-28">
-        <Reveal>
-          <SectionDivider className="mb-16" />
-        </Reveal>
         <Reveal className="max-w-2xl mb-16">
           <h2 className="font-heading font-bold text-4xl tracking-tight text-ink mb-5">Core competencies</h2>
           <p className="text-ink-soft leading-7">
@@ -192,7 +188,6 @@ export default function Home() {
 
       {/* CTA */}
       <div className="mx-auto max-w-6xl px-6 lg:px-8 pt-8 pb-28">
-        <SectionDivider className="mb-16" />
         <Reveal className="rounded-none border border-line bg-paper px-8 py-16 text-center sm:px-16">
           <h2 className="font-heading font-bold text-4xl tracking-tight text-ink">Want to see the case studies?</h2>
           <p className="mt-5 text-ink-soft max-w-md mx-auto leading-7">
