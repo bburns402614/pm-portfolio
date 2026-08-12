@@ -92,7 +92,7 @@ export default function About() {
             <div className="relative w-full max-w-[15rem] print:hidden">
               <div aria-hidden="true" className="absolute inset-0 translate-x-3 translate-y-3 rounded-none bg-accent" />
 
-              <div className="group relative overflow-hidden rounded-2xl bg-muted" style={{ aspectRatio: "1086 / 1448" }}>
+              <div className="group relative overflow-hidden rounded-2xl bg-muted" style={{ aspectRatio: "1122 / 1402" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/portrait.png" alt="Breanna Burns, Product Manager" className="block h-full w-full object-cover object-top grayscale contrast-[1.08] brightness-[1.03] transition-transform duration-700 group-hover:scale-105" />
                 <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-accent/70 to-amber-900/40 opacity-60 mix-blend-multiply" />
