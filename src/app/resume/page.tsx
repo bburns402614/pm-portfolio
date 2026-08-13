@@ -82,7 +82,7 @@ const skills = [
 
 export default function Resume() {
   return (
-    <div className="min-h-screen bg-muted py-8 flex flex-col items-center print:bg-white print:p-0 print:block print:min-h-0">
+    <div className="min-h-screen bg-muted py-8 flex flex-col items-center print:bg-paper print:p-0 print:block print:min-h-0">
 
       {/* Action bar — hidden in print */}
       <div className="w-full max-w-[8.5in] mb-4 flex items-center justify-between px-1 print:hidden">
@@ -95,7 +95,7 @@ export default function Resume() {
       {/* Resume sheet — letter size on screen, full page in print */}
       <div
         id="resume-sheet"
-        className="w-full max-w-[8.5in] bg-white shadow-[0_4px_40px_rgba(0,0,0,0.12)] print:shadow-none print:max-w-none"
+        className="w-full max-w-[8.5in] bg-paper shadow-[0_4px_40px_rgba(0,0,0,0.12)] print:shadow-none print:max-w-none"
         style={{ padding: "0.55in 0.65in", minHeight: "11in" }}
       >
         {/* Header */}

@@ -185,12 +185,12 @@ export default function Projects() {
             <Reveal
               key={p.id}
               delay={Math.min(idx, 3) * 80}
-              className="group rounded-2xl border border-line bg-paper p-8 sm:p-12 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_4px_32px_rgba(37,99,235,0.08)] hover:-translate-y-1"
+              className="group rounded-2xl border border-line bg-paper p-8 sm:p-12 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_4px_32px_rgba(74,94,58,0.08)] hover:-translate-y-1"
             >
               {/* Card header */}
               <div className="flex items-start justify-between gap-6 mb-8">
                 <div className="flex items-center gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white font-heading font-bold text-xs tracking-tight">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-paper font-heading font-bold text-xs tracking-tight">
                     {p.initials}
                   </span>
                   <div>
@@ -249,10 +249,10 @@ export default function Projects() {
                   <dl className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                     {p.outcomes.map((o) => (
                       <div key={o.label} className="rounded-xl bg-ink p-5 transition-transform duration-200 hover:-translate-y-0.5">
-                        <dt className="font-heading font-bold text-3xl text-white tracking-tight tabular-nums">
+                        <dt className="font-heading font-bold text-3xl text-paper tracking-tight tabular-nums">
                           <AnimatedCounter value={o.stat} />
                         </dt>
-                        <dd className="mt-1.5 text-sm text-white/50 leading-5">{o.label}</dd>
+                        <dd className="mt-1.5 text-sm text-paper/50 leading-5">{o.label}</dd>
                       </div>
                     ))}
                   </dl>

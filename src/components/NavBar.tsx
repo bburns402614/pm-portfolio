@@ -63,7 +63,7 @@ export default function NavBar() {
           ))}
           <a
             href="mailto:burns.655@icloud.com"
-            className="cursor-pointer rounded-full bg-ink px-4 py-2 text-sm font-medium text-white hover:bg-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+            className="cursor-pointer rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
           >
             Get in touch
           </a>
@@ -75,7 +75,7 @@ export default function NavBar() {
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden inline-flex items-center justify-center rounded-md p-2 text-ink-soft hover:text-ink hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent"
+          className="sm:hidden inline-flex items-center justify-center rounded-md p-2 text-ink-soft hover:text-ink hover:bg-ink/5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent"
         >
           <svg
             aria-hidden="true"
@@ -136,7 +136,7 @@ export default function NavBar() {
             <a
               href="mailto:burns.655@icloud.com"
               onClick={() => setIsOpen(false)}
-              className="inline-flex items-center rounded-full bg-ink px-4 py-2 text-sm font-medium text-white hover:bg-accent transition-colors"
+              className="inline-flex items-center rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-accent transition-colors"
             >
               Get in touch
             </a>

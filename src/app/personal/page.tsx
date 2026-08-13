@@ -47,7 +47,7 @@ export default function Personal() {
           {/* Personality type */}
           <Reveal>
             <div className="flex items-center gap-3 mb-5">
-              <span className="inline-flex items-center rounded-full bg-accent text-white text-sm font-bold px-3 py-1 tracking-wide">
+              <span className="inline-flex items-center rounded-full bg-accent text-paper text-sm font-bold px-3 py-1 tracking-wide">
                 ENFP
               </span>
               <span className="text-sm font-medium text-ink-soft">The Campaigner</span>
@@ -163,7 +163,7 @@ export default function Personal() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
-                  <p className="absolute bottom-3 left-3 text-xs font-semibold tracking-wide text-white">
+                  <p className="absolute bottom-3 left-3 text-xs font-semibold tracking-wide text-paper">
                     {photo.caption}
                   </p>
                 </div>

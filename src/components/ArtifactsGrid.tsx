@@ -538,7 +538,7 @@ function Block({ block }: { block: PreviewBlock }) {
             <li key={i} className="flex items-start gap-2.5 text-sm">
               <span className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border transition-colors ${item.done ? "bg-accent border-accent" : "border-line"}`}>
                 {item.done && (
-                  <svg className="h-2.5 w-2.5 text-white" fill="none" viewBox="0 0 10 8">
+                  <svg className="h-2.5 w-2.5 text-paper" fill="none" viewBox="0 0 10 8">
                     <path d="M1 4l3 3 5-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 )}
@@ -651,7 +651,7 @@ function ThumbnailPreview({ artifact, meta }: { artifact: Artifact; meta: Catego
           {block.items.slice(0, 6).map((item, i) => (
             <div key={i} className="flex gap-2 items-center">
               <div className={`h-3.5 w-3.5 rounded-sm shrink-0 flex items-center justify-center ${item.done ? meta.activeBg : "bg-paper border border-line"}`}>
-                {item.done && <div className="h-1.5 w-1.5 rounded-sm bg-white" />}
+                {item.done && <div className="h-1.5 w-1.5 rounded-sm bg-paper" />}
               </div>
               <div className="h-2.5 rounded-sm bg-line" style={{ width: `${lw(i + 2)}%` }} />
             </div>
@@ -717,12 +717,12 @@ export default function ArtifactsGrid() {
                 onClick={() => setActive(isActive ? null : cat)}
                 className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-all duration-150 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                   isActive
-                    ? `${meta.activeBg} ${meta.activeBorder} text-white`
+                    ? `${meta.activeBg} ${meta.activeBorder} text-paper`
                     : `${meta.color} ${meta.bg} ${meta.border} hover:opacity-80`
                 }`}
               >
                 {cat}
-                {isActive && <span aria-hidden="true" className="text-white/70">×</span>}
+                {isActive && <span aria-hidden="true" className="text-paper/70">×</span>}
               </button>
             );
           })}
@@ -761,7 +761,7 @@ export default function ArtifactsGrid() {
                   </span>
                   <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 transition-colors duration-200" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-ink shadow-lg border border-line">
+                    <span className="rounded-full bg-paper px-4 py-2 text-xs font-semibold text-ink shadow-lg border border-line">
                       View →
                     </span>
                   </div>

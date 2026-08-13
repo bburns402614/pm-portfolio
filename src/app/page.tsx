@@ -84,7 +84,7 @@ export default function Home() {
                 <div className="mt-10 flex flex-wrap items-center gap-4">
                   <Link
                     href="/projects"
-                    className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                    className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-sm hover:bg-accent hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                   >
                     View Case Studies
                   </Link>
@@ -120,8 +120,8 @@ export default function Home() {
                         className="absolute flex items-center"
                         style={{ top: `${stage.pct}%`, transform: "translateY(-50%)" }}
                       >
-                        <div className="w-5 h-px bg-[#9a8d70]" />
-                        <div className="w-2 h-2 rounded-full border border-[#9a8d70] shrink-0 ml-0.5" />
+                        <div className="w-5 h-px bg-ink-faint" />
+                        <div className="w-2 h-2 rounded-full border border-ink-faint shrink-0 ml-0.5" />
                         <div className="ml-2.5">
                           <p className="font-heading font-bold text-sm uppercase tracking-[0.18em] text-ink leading-none">
                             {stage.label}
@@ -196,7 +196,7 @@ export default function Home() {
           <div className="mt-10 flex justify-center gap-x-4">
             <Link
               href="/projects"
-              className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-accent hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
+              className="cursor-pointer rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper hover:bg-accent hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200"
             >
               Case Studies
             </Link>
