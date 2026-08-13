@@ -512,12 +512,12 @@ const artifacts: Artifact[] = [
 ];
 
 const categoryMeta: Record<Category, { color: string; bg: string; border: string; activeBg: string; activeBorder: string }> = {
-  "AI Agents":   { color: "text-indigo-700", bg: "bg-indigo-50",  border: "border-indigo-200", activeBg: "bg-indigo-600",  activeBorder: "border-indigo-600"  },
-  Discovery:     { color: "text-violet-700", bg: "bg-violet-50",  border: "border-violet-200", activeBg: "bg-violet-600",  activeBorder: "border-violet-600"  },
-  Analysis:      { color: "text-blue-700",   bg: "bg-blue-50",    border: "border-blue-200",   activeBg: "bg-blue-600",    activeBorder: "border-blue-600"    },
-  Planning:      { color: "text-emerald-700",bg: "bg-emerald-50", border: "border-emerald-200",activeBg: "bg-emerald-600", activeBorder: "border-emerald-600" },
-  Compliance:    { color: "text-amber-700",  bg: "bg-amber-50",   border: "border-amber-200",  activeBg: "bg-amber-600",   activeBorder: "border-amber-600"   },
-  Communication: { color: "text-rose-700",   bg: "bg-rose-50",    border: "border-rose-200",   activeBg: "bg-rose-600",    activeBorder: "border-rose-600"    },
+  "AI Agents":   { color: "text-[#323F62]", bg: "bg-[#E8EAF3]", border: "border-[#B5BCE0]", activeBg: "bg-[#465578]", activeBorder: "border-[#465578]" },
+  Discovery:     { color: "text-[#433564]", bg: "bg-[#EDE9F5]", border: "border-[#CABFD8]", activeBg: "bg-[#5E5080]", activeBorder: "border-[#5E5080]" },
+  Analysis:      { color: "text-[#294443]", bg: "bg-[#E4EEEE]", border: "border-[#AECBCA]", activeBg: "bg-[#3B5E5C]", activeBorder: "border-[#3B5E5C]" },
+  Planning:      { color: "text-[#354A38]", bg: "bg-[#E6EDE7]", border: "border-[#AECBB2]", activeBg: "bg-[#4E6B52]", activeBorder: "border-[#4E6B52]" },
+  Compliance:    { color: "text-[#4A380E]", bg: "bg-[#F4EDDA]", border: "border-[#D8C9A0]", activeBg: "bg-[#7A6132]", activeBorder: "border-[#7A6132]" },
+  Communication: { color: "text-[#672E23]", bg: "bg-[#F5E8E5]", border: "border-[#DEBCB4]", activeBg: "bg-[#874236]", activeBorder: "border-[#874236]" },
 };
 
 const categories: Category[] = ["AI Agents", "Discovery", "Analysis", "Planning", "Compliance", "Communication"];
